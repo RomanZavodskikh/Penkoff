@@ -1,0 +1,84 @@
+{
+    "opers" :
+    [{
+        "date": "5",
+        "month": "мая",
+        "company": "ООО Сбербанк",
+        "text": "Проценты по кредиту",
+        "cash": "-450",
+        "currency": "$",
+        "state": "done"
+    },
+    {
+        "date": "4",
+        "month": "мая",
+        "company": "ООО Prisma Atlantic",
+        "text": "Стандартное назначение платежа абонентское обслуживание ООО Открытые бизнес-системы договор номер 134234235",
+        "cash": "300",
+        "currency": "$",
+        "state": "done"
+    },
+    {
+        "date": "3",
+        "month": "мая",
+        "company": "ООО МММ",
+        "text": "Проценты от Серого",
+        "cash": "120",
+        "currency": "$",
+        "state": "done"
+    },
+    {
+        "date": "1",
+        "month": "мая",
+        "company": "ООО Газпром",
+        "text": "Доход по акциям",
+        "cash": "241",
+        "currency": "$",
+        "state": "done"
+    },
+    {
+        "date": "29",
+        "month": "апреля",
+        "company": "ООО Теньков",
+        "text": "Взятка",
+        "cash": "100",
+        "currency": "$",
+        "state": "sign"
+    },
+    {
+        "date": "6",
+        "month": "мая",
+        "company": "ИП Имаметдинов Димас",
+        "text": "Плата за саппорт",
+        "cash": "200",
+        "currency": "$",
+        "state": "file"
+    },
+    {
+        "date": "5",
+        "month": "мая",
+        "company": "ЖКХ",
+        "text": "Счёт за воду",
+        "cash": "-350",
+        "currency": "$",
+        "state": "draft"
+    },
+    {
+        "date": "7",
+        "month": "мая",
+        "company": "ЖКХ",
+        "text": "Счёт за свет",
+        "cash": "-150",
+        "currency": "$",
+        "state": "queue"
+    },
+    {
+        "date": "9",
+        "month": "мая",
+        "company": "ИП Люся",
+        "text": "Плата за тортик",
+        "cash": "-850",
+        "currency": "$",
+        "state": "rej"
+    }]
+}

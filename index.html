@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="jquery-3.1.0.min.js"></script>
+    </head>
+    <body>
+    <div class="top_menu">
+        <div id="logo">
+            <img id="logo_img" src="pen.png" alt="Пень">
+        </div>
+        <div class="top_options">
+            <a class="sub_menu" href="#">Главная</a>
+            <a class="sub_menu" href="#">Контрагенты</a>
+            <a class="sub_menu" href="#">Лимиты</a>
+            <a class="sub_menu" href="#">Тариф</a>
+            <a class="sub_menu" href="#">Справка</a>
+            <a id="create_payment" href="#">Создать платёж</a>
+        </div>
+    </div>
+    <div class="main_part">
+        <div class="rouble_account block">
+                Типа рублёвый счёт <br> 0&#x20BD
+                <svg id="rouble_svg" height="300" width="100%">
+                    <line class="line" x1="0" y1="300" x2="50" y2="200" />
+                    <line class="line" x1="50" y1="200" x2="100" y2="241" />
+                    Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
+                </svg>
+        </div>
+        <div class="dollar_account block">
+                Типа долларовый счёт <br> 0$
+                <svg id="dollar_svg" height="300" width="100%">
+                    Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
+                </svg>
+        </div>
+        <div class="exchange_rates block">Типа доллар стоит 63.85&#x20BD, типа евро стоит 72.01&#x20BD</div>
+        <div class="transaction block">
+            <div id="transactions_choose">
+                <nav>
+                    <a id="done" class="sub_menu" href="#">Выполненные</a>
+                    <a id="draft" class="sub_menu" href="#">Черновики</a>
+                    <a id="sign" class="sub_menu" href="#">На подпись</a>
+                    <a id="queue" class="sub_menu" href="#">Очередь оплаты</a>
+                    <a id="rej" class="sub_menu" href="#">Отклонённые</a>
+                    <a id="file" class="sub_menu" href="#">Картотека</a>
+                </nav>
+            </div>
+            <div id="transactions">
+            </div>
+        </div>
+        <div class="copyright block">
+                &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
+        </div>
+    </div>
+    <div class="profile_placeholder">
+        <div class="profile">
+            <h3>Сидор Ванька</h3>
+            <h5>ЭмФэТэИ</h5>
+            <div class="delimeter"></div>
+            <a href="#" id="rko" class="right_menu">
+                РКО
+            </a>
+            <a href="#" id="salary_project" class="right_menu">
+                Зарплатный проект
+            </a>
+            <a href="#" id="acquiring" class="right_menu">
+                Эквайринг
+            </a>
+            <a href="#" id="buy_by_credit" class="right_menu">
+                КВК
+            </a>
+            <a href="#" id="accounting" class="right_menu">
+                Бухгалтерия
+            </a>
+            <a href="#" id="settings" class="right_menu">
+                Панель управления
+            </a>
+            <div id="ads">
+                <h1 class="ad_header">Не экономьте на платежах.</h1> Типа экономьте на еде.
+            </div>
+        </div>
+    </div>
+    <!-- <script src="opers.json"></script> -->
+    <script src="opers.js"></script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.profile_placeholder {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 1%;
+    background: #3E4758;
+    color: #FFFFFF;
+    width: 20%;
+    padding-top: 2%;
+}
+.top_menu {
+    width: 79%;
+    min-height: 100px;
+    background: #FFFFFF;
+    border-bottom: 2px solid #c7c9cc;
+    display: inline-block;
+}
+.top_options {
+    float: left;
+    margin-top: 30px;
+    display: inline-block;
+    width: 85%;
+}
+.main_part {
+    width: 70%;
+    position: static;
+    margin-top: 5px;
+    margin-left: 5%;
+}
+.block {
+    background: #FFFFFF;
+    display: inline-block;
+    margin: 2px 0px;
+    border: solid 1px #c7c9cc;
+    border-radius: 5px;
+}
+.line {
+    stroke: rgb(255, 0, 0);
+    stroke-width: 1;
+}
+.accounts {
+    width: 100%;
+}
+.rouble_account {
+    width: 47%;
+    box-sizing: border-box;
+}
+.dollar_account {
+    width: 47%;
+    box-sizing: border-box;
+    float: right;
+    margin-right: -2px; /*Вот костыль, мать его!!!*/
+}
+.top_options .sub_menu {
+    margin: 1px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+.top_options .sub_menu:hover {
+    color: #C7C8CA;
+}
+.exchange_rates {
+    text-align: center;
+    width: 100%;
+}
+.transaction {
+    text-align: center;
+    width: 100%;
+}
+.copyright {
+    text-align: center;
+    width: 100%;
+}
+.operation {
+    width: 100%;
+    display: inline-block;
+    border: #C7C8CA solid;
+    border-width: 1px 0px 1px 0px;
+    margin: 1px 0px 1px 0px;
+    padding: 7px 0px;
+}
+.operation .date {
+    width: 7%;
+    float: left;
+}
+.operation .company {
+    width: 15%;
+    float: left;
+}
+.operation .text {
+    width: 60%;
+    float: left;
+}
+.delimeter {
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+.right_menu {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin: 2px;
+}
+.ad_header {
+    font-size: larger;
+}
+#create_payment {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    background: #FEDD30;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 7%;
+}
+#create_payment:hover {
+    background: #3cb0fd;
+}
+#logo {
+    float: left;
+}
+#logo_img {
+    float: left;
+}
+#ads {
+    min-height: 200px;
+    background: url("ad.jpg");
+    margin-top: 5px;
+}
+#transactions_choose {
+    width: 100%;
+    padding-bottom: 3px;
+    border-bottom: 1px solid;
+}
+#transactions_choose .sub_menu {
+    display: inline-block;
+    text-decoration: none;
+    color: #C7C8CA;
+    width: 16%;
+}
+#transactions_choose .sub_menu:hover {
+    color: #000000;
+}
+body {
+    background: #F6F7F9;
+    font: 13px/20px pragmatica,Helvetica,Arial,sans-serif;
+}
