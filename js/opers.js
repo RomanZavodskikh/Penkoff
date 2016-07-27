@@ -28,7 +28,7 @@ function compareOpers ( a, b ) {
     }
 }
 
-$.getJSON("opers.json", function ( json ) {
+$.getJSON("js/opers.json", function ( json ) {
     var done = 0;
     var draft = 0;
     var sign = 0;
