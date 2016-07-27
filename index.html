@@ -1,57 +1,68 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-    <div class="top_menu jumbotron">
-        <div id="logo">
-            <img id="logo_img" src="img/pen.png" alt="Пень">
+    <div class="top_menu jumbotron container">
+        <div id="logo" class="col-sm-3">
+            <img src="img/pen.svg" alt="Логотип">
         </div>
-        <div class="top_options">
+        <div class="col-sm-6">
             <a class="sub_menu" href="#">Главная</a>
             <a class="sub_menu" href="#">Контрагенты</a>
             <a class="sub_menu" href="#">Лимиты</a>
             <a class="sub_menu" href="#">Тариф</a>
             <a class="sub_menu" href="#">Справка</a>
-            <a id="create_payment" href="#">Создать платёж</a>
+        </div>
+        <div class="col-sm-3">
+            <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
         </div>
     </div>
     <div class="main_part container">
-        <div class="rouble_account block">
-                Типа рублёвый счёт <br> 0&#x20BD
-                <svg id="rouble_svg" height="300" width="100%">
-                    <line class="line" x1="0" y1="300" x2="50" y2="200" />
-                    <line class="line" x1="50" y1="200" x2="100" y2="241" />
-                    Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
-                </svg>
-        </div>
-        <div class="dollar_account block">
-                Типа долларовый счёт <br> 0$
-                <svg id="dollar_svg" height="300" width="100%">
-                    Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
-                </svg>
-        </div>
-        <div class="exchange_rates block">Типа доллар стоит 63.85&#x20BD, типа евро стоит 72.01&#x20BD</div>
-        <div class="transaction block">
-            <div id="transactions_choose">
-                <nav>
-                    <a id="done" class="sub_menu" href="#">Выполненные</a>
-                    <a id="draft" class="sub_menu" href="#">Черновики</a>
-                    <a id="sign" class="sub_menu" href="#">На подпись</a>
-                    <a id="queue" class="sub_menu" href="#">Очередь оплаты</a>
-                    <a id="rej" class="sub_menu" href="#">Отклонённые</a>
-                    <a id="file" class="sub_menu" href="#">Картотека</a>
-                </nav>
+        <div class="row">
+            <div class="rouble_account block col-sm-5">
+                    Типа рублёвый счёт <br> 0&#x20BD
+                    <svg id="rouble_svg" height="300" width="100%">
+                        <line class="line" x1="0" y1="300" x2="50" y2="200" />
+                        <line class="line" x1="50" y1="200" x2="100" y2="241" />
+                        Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
+                    </svg>
             </div>
-            <div id="transactions">
+            <div class="col-sm-2"></div>
+            <div class="dollar_account block col-sm-5">
+                    Типа долларовый счёт <br> 0$
+                    <svg id="dollar_svg" height="300" width="100%">
+                        Звиняйте, но SVG у вас не поддерживается, графичков тут не будет!!!
+                    </svg>
             </div>
         </div>
-        <div class="copyright block">
-                &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
+        <div class="row">
+            <div class="exchange_rates block col-sm-12">Типа доллар стоит 63.85&#x20BD, типа евро стоит 72.01&#x20BD</div>
+        </div>
+        <div class="row">
+            <div class="transaction block col-sm-12">
+                <div id="transactions_choose">
+                    <nav>
+                        <a id="done" class="sub_menu" href="#">Выполненные</a>
+                        <a id="draft" class="sub_menu" href="#">Черновики</a>
+                        <a id="sign" class="sub_menu" href="#">На подпись</a>
+                        <a id="queue" class="sub_menu" href="#">Очередь оплаты</a>
+                        <a id="rej" class="sub_menu" href="#">Отклонённые</a>
+                        <a id="file" class="sub_menu" href="#">Картотека</a>
+                    </nav>
+                </div>
+                <div id="transactions">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="copyright block col-sm-12">
+                    &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
+            </div>
         </div>
     </div>
     <div class="profile_placeholder">
