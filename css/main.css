@@ -19,6 +19,12 @@
     display: inline-block;
     padding: 2px;
 }
+.top_menu > * {
+    margin-top: 50px;
+}
+.top_menu #logo {
+    margin-top: 0px;
+}
 .main_part {
     width: 70%;
     position: static;
@@ -46,6 +52,7 @@
     text-align: center;
     display: inline-block;
     min-width: 80px;
+    font-size: medium;
 }
 .top_options .sub_menu:hover {
     color: #C7C8CA;
@@ -96,12 +103,6 @@
 }
 .ad_header {
     font-size: larger;
-}
-#logo {
-    float: left;
-}
-#logo_img {
-    float: left;
 }
 #ads {
     min-height: 200px;

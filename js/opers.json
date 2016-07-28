@@ -80,5 +80,23 @@
         "cash": "-850",
         "currency": "$",
         "state": "rej"
+    },
+    {
+        "date": "7",
+        "month": "мая",
+        "company": "Starbucks",
+        "text": "Кофе",
+        "cash": "-199",
+        "currency": "р",
+        "state": "done"
+    },
+    {
+        "date": "8",
+        "month": "мая",
+        "company": "KFC",
+        "text": "Острые куриные крылышки, 8 шт.",
+        "cash": "-399",
+        "currency": "р",
+        "state": "done"
     }]
 }

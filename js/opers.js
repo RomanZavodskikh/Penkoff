@@ -40,19 +40,8 @@ $.getJSON("js/opers.json", function ( json ) {
     opers.sort(compareOpers);
 
 
-    var WIDTH=$("#dollar_svg").width();
-    var HEIGHT=$("#dollar_svg").height();
-    var SQUEZZE=20;
-    var x1 = 0;
-    var y1 = 0;
     for (i = 0; i < opers.length; i++) {
         document.getElementById("transactions").innerHTML += '<div class="operation" id="op' + i + '"><div class="date">' + opers[i].date + " " + opers[i].month + '</div><div class="company">' +  opers[i].company + '</div><div class="text">' + opers[i].text + '</div><div class="cash">' + opers[i].cash + opers[i].currency + '</div></div>';
-
-        var x2 = x1 + WIDTH/opers.length;
-        var y2 = y1 + opers[i].cash/SQUEZZE;
-        document.getElementById("dollar_svg").innerHTML += '<line class="line" x1=' + x1 + ' y1=' + (HEIGHT/2-y1) + ' x2=' + x2 + ' y2=' + (HEIGHT/2-y2) + ' />'
-        x1 = x2;
-        y1 = y2;
 
         switch(opers[i].state) {
             case "done":
@@ -76,6 +65,32 @@ $.getJSON("js/opers.json", function ( json ) {
             default:
                 console.log("Error in JSON opers array member state on element #" + i);
             break;
+        }
+    }
+
+    var NUM_OF_DOL_OPERS = opers.filter(function(x){return x.currency==="$"}).length;
+    var NUM_OF_RUB_OPERS = opers.filter(function(x){return x.currency==="р"}).length;
+    var WIDTH=$("#dollar_svg").width();
+    var HEIGHT=$("#dollar_svg").height();
+    var SQUEZZE=20;
+    var x1_dol = 0;
+    var y1_dol = 0;
+    var x1_rub = 0;
+    var y1_rub = 0;
+    for (i = opers.length-1; i >= 0; i--) {
+        console.log(i);
+        if (opers[i].currency === "$") {
+            var x2_dol = x1_dol + WIDTH/NUM_OF_DOL_OPERS;
+            var y2_dol = y1_dol + opers[i].cash/SQUEZZE;
+            document.getElementById("dollar_svg").innerHTML += '<line class="line" x1=' + x1_dol + ' y1=' + (HEIGHT/2-y1_dol) + ' x2=' + x2_dol + ' y2=' + (HEIGHT/2-y2_dol) + ' />'
+            x1_dol = x2_dol;
+            y1_dol = y2_dol;
+        } else if (opers[i].currency === "р") {
+            var x2_rub = x1_rub + WIDTH/NUM_OF_RUB_OPERS;
+            var y2_rub = y1_rub + opers[i].cash/SQUEZZE;
+            document.getElementById("rouble_svg").innerHTML += '<line class="line" x1=' + x1_rub + ' y1=' + (HEIGHT/2-y1_rub) + ' x2=' + x2_rub + ' y2=' + (HEIGHT/2-y2_rub) + ' />'
+            x1_rub = x2_rub;
+            y1_rub = y2_rub;
         }
     }
 
