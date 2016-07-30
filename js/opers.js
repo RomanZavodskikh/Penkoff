@@ -1,3 +1,4 @@
+'use strict';
 function monthToNumber ( string ) {
     switch (string) {
         case "января": return 1;
@@ -40,7 +41,7 @@ $.getJSON("js/opers.json", function ( json ) {
     opers.sort(compareOpers);
 
 
-    for (i = 0; i < opers.length; i++) {
+    for (var i = 0; i < opers.length; i++) {
         document.getElementById("transactions").innerHTML += '<div class="operation" id="op' + i + '"><div class="date">' + opers[i].date + " " + opers[i].month + '</div><div class="company">' +  opers[i].company + '</div><div class="text">' + opers[i].text + '</div><div class="cash">' + opers[i].cash + opers[i].currency + '</div></div>';
 
         switch(opers[i].state) {
@@ -78,7 +79,6 @@ $.getJSON("js/opers.json", function ( json ) {
     var x1_rub = 0;
     var y1_rub = 0;
     for (i = opers.length-1; i >= 0; i--) {
-        console.log(i);
         if (opers[i].currency === "$") {
             var x2_dol = x1_dol + WIDTH/NUM_OF_DOL_OPERS;
             var y2_dol = y1_dol + opers[i].cash/SQUEZZE;

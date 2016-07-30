@@ -45,6 +45,15 @@
 .accounts {
     width: 100%;
 }
+.rouble_account {
+    width: 47%;
+}
+.accounts_border {
+    width: 6%;
+}
+.dollar_account {
+    width: 47%;
+}
 .sub_menu {
     margin: 1px;
     color: black;
