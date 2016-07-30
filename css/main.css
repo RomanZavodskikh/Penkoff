@@ -2,34 +2,11 @@
     padding: 0;
     margin: 0;
 }
-.profile_placeholder {
-    position: fixed;
-    top: 0%;
-    bottom: 0%;
-    right: 1%;
-    background: #3E4758;
-    color: #FFFFFF;
-    width: 20%;
-    padding-top: 2%;
-}
 .top_menu {
-    width: 79%;
     background: #FFFFFF;
     border-bottom: 2px solid #c7c9cc;
     display: inline-block;
     padding: 2px;
-}
-.top_menu > * {
-    margin-top: 50px;
-}
-.top_menu #logo {
-    margin-top: 0px;
-}
-.main_part {
-    width: 70%;
-    position: static;
-    margin-top: 5px;
-    margin-left: 5%;
 }
 .block {
     background: #FFFFFF;
@@ -42,17 +19,19 @@
     stroke: rgb(255, 0, 0);
     stroke-width: 1;
 }
-.accounts {
-    width: 100%;
+#transactions_choose .sub_menu:hover {
+    color: #000000;
 }
-.rouble_account {
-    width: 47%;
+body {
+    background: #F6F7F9;
 }
-.accounts_border {
-    width: 6%;
-}
-.dollar_account {
-    width: 47%;
+.profile_placeholder {
+    top: 0%;
+    bottom: 0%;
+    right: 1%;
+    background: #3E4758;
+    color: #FFFFFF;
+    padding-top: 2%;
 }
 .sub_menu {
     margin: 1px;
@@ -62,6 +41,9 @@
     display: inline-block;
     min-width: 80px;
     font-size: medium;
+}
+.top_menu {
+    width: 100%;
 }
 .top_options .sub_menu:hover {
     color: #C7C8CA;
@@ -129,9 +111,42 @@
     color: #C7C8CA;
     width: 16%;
 }
-#transactions_choose .sub_menu:hover {
-    color: #000000;
+.rouble_account, .dollar_account {
+    width: 100%;
 }
-body {
-    background: #F6F7F9;
+.accounts_border {
+    width: 0px;
+}
+.top_menu > * {
+    margin-top: 3%;
+}
+.top_menu #logo {
+    margin-top: 0px;
+    min-width: 250px;
+}
+@media (min-width: 700px) and (min-height: 550px) {
+    .profile_placeholder {
+        position: fixed;
+        width: 20%;
+    }
+    .top_menu {
+        width: 79%;
+    }
+    .main_part {
+        width: 70%;
+        position: static;
+        margin-top: 5px;
+        margin-left: 5%;
+    }
+}
+@media (min-width: 768px) {
+    .rouble_account {
+        width: 47%;
+    }
+    .accounts_border {
+        width: 6%;
+    }
+    .dollar_account {
+        width: 47%;
+    }
 }
