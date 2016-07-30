@@ -1,32 +1,27 @@
 'use strict';
-function monthToNumber ( string ) {
-    switch (string) {
-        case "января": return 1;
-        case "февраля": return 2;
-        case "марта": return 3;
-        case "апреля": return 4;
-        case "мая": return 5;
-        case "июня": return 6;
-        case "июля": return 7;
-        case "августа": return 8;
-        case "сентября": return 9;
-        case "октября": return 10;
-        case "ноября": return 11;
-        case "декабря": return 12;
-        default: console.log("Wrong month string!!!");
-    }
+function compareOpersByDate (a, b) {
+    return -( Date.parse(a.date_str) - Date.parse(b.date_str) );
 }
 
-function compareOpers ( a, b ) {
-    if ( monthToNumber(a.month) < monthToNumber(b.month) ) {
-        return 1;
-    } else if ( monthToNumber(a.month) > monthToNumber(b.month) ) {
-        return -1;
-    } else if ( Number(a.date) < Number(b.date) ) {
-        return 1;
-    } else {
-        return -1;
+function dateFormat ( cur_date ) {
+    var month = "";
+    switch (cur_date.getMonth()) {
+        case 0: month = "января"; break;
+        case 1: month = "февраля"; break;
+        case 2: month = "марта"; break;
+        case 3: month = "апреля"; break;
+        case 4: month = "мая"; break;
+        case 5: month = "июня"; break;
+        case 6: month = "июля"; break;
+        case 7: month = "августа"; break;
+        case 8: month = "сентября"; break;
+        case 9: month = "октября"; break;
+        case 10: month = "ноября"; break;
+        case 11: month = "декабря"; break;
+        default: console.log("Error: invalid month in date"); break;
     }
+
+    return cur_date.getDate() + " " + month;
 }
 
 $.getJSON("js/opers.json", function ( json ) {
@@ -38,11 +33,14 @@ $.getJSON("js/opers.json", function ( json ) {
     var file = 0;
 
     var opers = json.opers;
-    opers.sort(compareOpers);
+    opers.sort(compareOpersByDate);
 
+    console.log(opers);
 
     for (var i = 0; i < opers.length; i++) {
-        document.getElementById("transactions").innerHTML += '<div class="operation" id="op' + i + '"><div class="date">' + opers[i].date + " " + opers[i].month + '</div><div class="company">' +  opers[i].company + '</div><div class="text">' + opers[i].text + '</div><div class="cash">' + opers[i].cash + opers[i].currency + '</div></div>';
+        var cur_date = new Date(Date.parse(opers[i].date_str));
+
+        document.getElementById("transactions").innerHTML += '<div class="operation" id="op' + i + '"><div class="date">' + dateFormat(cur_date) + '</div><div class="company">' +  opers[i].company + '</div><div class="text">' + opers[i].text + '</div><div class="cash">' + opers[i].cash + opers[i].currency + '</div></div>';
 
         switch(opers[i].state) {
             case "done":
@@ -101,3 +99,4 @@ $.getJSON("js/opers.json", function ( json ) {
     document.getElementById("rej").innerHTML += " " + rej;
     document.getElementById("file").innerHTML += " " + file;
 });
+
