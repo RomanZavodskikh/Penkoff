@@ -135,7 +135,7 @@ body {
     margin-top: 0px;
     min-width: 250px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 980px) {
     .profile_placeholder {
         position: static;
         width: 100%;
@@ -147,8 +147,6 @@ body {
     .main_part {
         width: 90%;
     }
-}
-@media screen and (max-width: 980px) {
     .rouble_account, .dollar_account {
         width: 100%;
     }
