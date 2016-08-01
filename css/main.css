@@ -163,19 +163,19 @@ body {
 }
 @media screen and (max-width: 980px) {
     body {
-        font-size: 25px;
+        font-size: 35px;
     }
     .sub_menus {
         float: right;
     }
     .sub_menu {
-        font-size: 20px;
-    }
-    h3 {
         font-size: 40px;
     }
+    h3 {
+        font-size: 50px;
+    }
     h5, li, a {
-        font-size: 35px;
+        font-size: 45px;
     }
     .profile_placeholder {
         top: auto;
@@ -202,7 +202,8 @@ body {
         margin-top: 0px;
         position: relative;
         top: 120px;
-        right: 250px;
+        right: 270px;
+        font-size: 25px;
     }
     .right_menu {
         display: inline;
