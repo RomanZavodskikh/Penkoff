@@ -96,6 +96,8 @@ body {
     font-size: larger;
 }
 #ads {
+    padding: 5px;
+    text-align: center;
     min-height: 200px;
     background: url("../img/ad.jpg");
     margin-top: 5px;
@@ -124,7 +126,7 @@ body {
     margin-top: 0px;
     min-width: 250px;
 }
-@media (min-width: 700px) and (min-height: 550px) {
+@media screen and (min-width: 700px) and (min-height: 550px) {
     .profile_placeholder {
         position: fixed;
         width: 20%;
@@ -139,7 +141,7 @@ body {
         margin-left: 5%;
     }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .rouble_account {
         width: 47%;
     }
