@@ -35,8 +35,6 @@ $.getJSON("js/opers.json", function ( json ) {
     var opers = json.opers;
     opers.sort(compareOpersByDate);
 
-    console.log(opers);
-
     for (var i = 0; i < opers.length; i++) {
         var cur_date = new Date(Date.parse(opers[i].date_str));
 
@@ -99,4 +97,3 @@ $.getJSON("js/opers.json", function ( json ) {
     document.getElementById("rej").innerHTML += " " + rej;
     document.getElementById("file").innerHTML += " " + file;
 });
-

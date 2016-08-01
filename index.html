@@ -5,8 +5,9 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script src="js/jquery-3.1.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.js"></script>
     </head>
-    <body>
+    <body ng-app="" style="background-color:{{bck_color}}">
     <div class="top_menu jumbotron">
         <img id="logo" src="img/pen.svg" alt="Логотип">
         <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
@@ -35,6 +36,9 @@
                 <h1 class="ad_header">Не экономьте на платежах.</h1> Совершайте неограниченное число платежей за 990 рублей в месяц
             </div>
         </div>
+        <span class="color_choose" id="grey_bck" ng-click="bck_color='#F6F7F9'"></span>
+        <span class="color_choose" id="blue_bck" ng-click="bck_color='#0000ff'"></span>
+        <span class="color_choose" id="purp_bck" ng-click="bck_color='#8b00ff'"></span>
     </div>
     <div class="main_part container">
         <div class="row">
