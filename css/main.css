@@ -147,6 +147,21 @@ body {
     width: 47%;
 }
 @media screen and (max-width: 980px) {
+    body {
+        font-size: 25px;
+    }
+    .sub_menus {
+        float: right;
+    }
+    .sub_menu {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    h5, li, a {
+        font-size: 35px;
+    }
     .profile_placeholder {
         top: auto;
         bottom: auto;
@@ -163,18 +178,25 @@ body {
     }
     .top_menu .sub_menus {
         margin-top: 0px;
+        float: right;
     }
     .top_menu .sub_menus li {
         display: block;
     }
     .top_menu #create_payment {
         margin-top: 0px;
+        position: relative;
+        top: 120px;
+        right: 250px;
     }
     .right_menu {
         display: inline;
     }
     .main_part {
         width: 90%;
+    }
+    .main_part #transactions_choose {
+        display: none;
     }
     .rouble_account, .dollar_account {
         width: 100%;

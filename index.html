@@ -9,6 +9,7 @@
     <body>
     <div class="top_menu jumbotron">
         <img id="logo" src="img/pen.svg" alt="Логотип">
+        <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
         <ul class="sub_menus">
             <li><a class="sub_menu" href="#">Главная</a></li>
             <li><a class="sub_menu" href="#">Контрагенты</a></li>
@@ -16,7 +17,6 @@
             <li><a class="sub_menu" href="#">Тариф</a></li>
             <li><a class="sub_menu" href="#">Справка</a></li>
         </ul>
-        <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
     </div>
     <div class="profile_placeholder">
         <div class="profile">
@@ -58,14 +58,12 @@
         <div class="row">
             <div class="transaction block col-sm-12">
                 <div id="transactions_choose">
-                    <nav>
-                        <a id="done" class="sub_menu" href="#">Выполненные</a>
-                        <a id="draft" class="sub_menu" href="#">Черновики</a>
-                        <a id="sign" class="sub_menu" href="#">На подпись</a>
-                        <a id="queue" class="sub_menu" href="#">Очередь оплаты</a>
-                        <a id="rej" class="sub_menu" href="#">Отклонённые</a>
-                        <a id="file" class="sub_menu" href="#">Картотека</a>
-                    </nav>
+                    <a id="done" class="tr_type" href="#">Выполненные</a>
+                    <a id="draft" class="tr_type" href="#">Черновики</a>
+                    <a id="sign" class="tr_type" href="#">На подпись</a>
+                    <a id="queue" class="tr_type" href="#">Очередь оплаты</a>
+                    <a id="rej" class="tr_type" href="#">Отклонённые</a>
+                    <a id="file" class="tr_ype" href="#">Картотека</a>
                 </div>
                 <div id="transactions">
                 </div>
