@@ -7,6 +7,7 @@
     border-bottom: 2px solid #c7c9cc;
     display: inline-block;
     padding: 2px;
+    width: 79%;
 }
 .block {
     background: #FFFFFF;
@@ -32,6 +33,8 @@ body {
     background: #3E4758;
     color: #FFFFFF;
     padding-top: 2%;
+    position: fixed;
+    width: 20%;
 }
 .sub_menu {
     margin: 1px;
@@ -42,11 +45,14 @@ body {
     min-width: 80px;
     font-size: medium;
 }
-.top_menu {
-    width: 100%;
-}
 .top_options .sub_menu:hover {
     color: #C7C8CA;
+}
+.main_part {
+    width: 70%;
+    position: static;
+    margin-top: 5px;
+    margin-left: 5%;
 }
 .exchange_rates {
     text-align: center;
@@ -113,11 +119,14 @@ body {
     color: #C7C8CA;
     width: 16%;
 }
-.rouble_account, .dollar_account {
-    width: 100%;
+.rouble_account {
+    width: 47%;
 }
 .accounts_border {
-    width: 0px;
+    width: 6%;
+}
+.dollar_account {
+    width: 47%;
 }
 .top_menu > * {
     margin-top: 3%;
@@ -126,29 +135,25 @@ body {
     margin-top: 0px;
     min-width: 250px;
 }
-@media screen and (min-width: 700px) and (min-height: 550px) {
+@media screen and (max-width: 700px) {
     .profile_placeholder {
-        position: fixed;
-        width: 20%;
+        position: static;
+        width: 100%;
     }
     .top_menu {
-        width: 79%;
+        margin: auto;
+        width: 100%;
     }
     .main_part {
-        width: 70%;
-        position: static;
-        margin-top: 5px;
-        margin-left: 5%;
+        width: 90%;
     }
 }
-@media screen and (min-width: 768px) {
-    .rouble_account {
-        width: 47%;
+@media screen and (max-width: 768px) {
+
+    .rouble_account, .dollar_account {
+        width: 100%;
     }
     .accounts_border {
-        width: 6%;
-    }
-    .dollar_account {
-        width: 47%;
+        width: 0px;
     }
 }
