@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+#debug_info {
+    display: none;
+}
 .block {
     background: #FFFFFF;
     display: inline-block;
