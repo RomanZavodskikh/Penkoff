@@ -163,19 +163,19 @@ body {
 }
 @media screen and (max-width: 980px) {
     body {
-        font-size: 35px;
+        font-size: 45px;
     }
     .sub_menus {
         float: right;
     }
     .sub_menu {
-        font-size: 40px;
-    }
-    h3 {
         font-size: 50px;
     }
+    h3 {
+        font-size: 60px;
+    }
     h5, li, a {
-        font-size: 45px;
+        font-size: 55px;
     }
     .profile_placeholder {
         top: auto;
@@ -187,26 +187,31 @@ body {
     .profile_placeholder .profile ul li {
         display: inline;
     }
+    .profile_placeholder .color_choose {
+        width: 300px;
+        height: 150px;
+    }
     .top_menu {
         margin: auto;
         width: 100%;
     }
     .top_menu .sub_menus {
+        width: 40%;
         margin-top: 0px;
-        float: right;
+        float: left;
     }
     .top_menu .sub_menus li {
         display: block;
     }
+    .top_menu #logo {
+        width: 100%;
+    }
     .top_menu #create_payment {
         margin-top: 0px;
-        position: relative;
-        top: 120px;
-        right: 270px;
-        font-size: 25px;
+        width: 100%;
+        font-size: 45px;
     }
     .right_menu {
-        display: inline;
     }
     .main_part {
         width: 90%;
