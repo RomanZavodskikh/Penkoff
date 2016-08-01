@@ -7,44 +7,30 @@
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-    <div class="top_menu jumbotron container">
-        <div id="logo" class="col-sm-3">
-            <img src="img/pen.svg" alt="Логотип">
-        </div>
-        <div class="col-sm-6">
-            <a class="sub_menu" href="#">Главная</a>
-            <a class="sub_menu" href="#">Контрагенты</a>
-            <a class="sub_menu" href="#">Лимиты</a>
-            <a class="sub_menu" href="#">Тариф</a>
-            <a class="sub_menu" href="#">Справка</a>
-        </div>
-        <div class="col-sm-3">
-            <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
-        </div>
+    <div class="top_menu jumbotron">
+        <img id="logo" src="img/pen.svg" alt="Логотип">
+        <ul class="sub_menus">
+            <li><a class="sub_menu" href="#">Главная</a></li>
+            <li><a class="sub_menu" href="#">Контрагенты</a></li>
+            <li><a class="sub_menu" href="#">Лимиты</a></li>
+            <li><a class="sub_menu" href="#">Тариф</a></li>
+            <li><a class="sub_menu" href="#">Справка</a></li>
+        </ul>
+        <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
     </div>
     <div class="profile_placeholder">
         <div class="profile">
             <h3>Заводских Роман</h3>
             <h5>МФТИ</h5>
             <div class="delimeter"></div>
-            <a href="#" id="rko" class="right_menu">
-                РКО
-            </a>
-            <a href="#" id="salary_project" class="right_menu">
-                Зарплатный проект
-            </a>
-            <a href="#" id="acquiring" class="right_menu">
-                Эквайринг
-            </a>
-            <a href="#" id="buy_by_credit" class="right_menu">
-                КВК
-            </a>
-            <a href="#" id="accounting" class="right_menu">
-                Бухгалтерия
-            </a>
-            <a href="#" id="settings" class="right_menu">
-                Панель управления
-            </a>
+            <ul>
+                <li><a href="#" id="rko" class="right_menu">РКО</a></li>
+                <li><a href="#" id="salary_project" class="right_menu">Зарплатный проект</a></li>
+                <li><a href="#" id="acquiring" class="right_menu">Эквайринг</a></li>
+                <li><a href="#" id="buy_by_credit" class="right_menu">КВК</a></li>
+                <li><a href="#" id="accounting" class="right_menu">Бухгалтерия</a></li>
+                <li><a href="#" id="settings" class="right_menu">Панель управления</a></li>
+            </ul>
             <div id="ads">
                 <h1 class="ad_header">Не экономьте на платежах.</h1> Совершайте неограниченное число платежей за 990 рублей в месяц
             </div>
