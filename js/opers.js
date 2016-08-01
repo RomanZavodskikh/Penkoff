@@ -21,7 +21,7 @@ function dateFormat ( cur_date ) {
         default: console.log("Error: invalid month in date"); break;
     }
 
-    return cur_date.getDate() + " " + month;
+    return cur_date.getDate().toString() + " " + month;
 }
 
 $.getJSON("js/opers.json", function ( json ) {
