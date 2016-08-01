@@ -20,6 +20,9 @@ function dateFormat ( cur_date ) {
         case 11: month = "декабря"; break;
         default: console.log("Error: invalid month in date"); break;
     }
+    document.getElementById("debug_info").innerHTML += cur_date.toString() + "<br>";
+    document.getElementById("debug_info").innerHTML += cur_date.getDate() + "<br>";
+    document.getElementById("debug_info").innerHTML += month + "<br>";
 
     return cur_date.getDate().toString() + " " + month;
 }
