@@ -7,15 +7,15 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.js"></script>
     </head>
-    <body ng-app="" style="background-color:{{bck_color}}">
+    <body ng-app="myApp" ng-controller="myCtrl" style="background-color:{{bck_color}}">
     <div id="debug_info">
     </div>
     <div class="top_menu jumbotron">
         <img id="logo" src="img/pen.svg" alt="Логотип">
-        <span class="menu_hider" id="white_menu_hider"></span>
-        <span class="menu_hider" id="black_menu_hider"></span>
+        <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();"></span>
+        <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();"></span>
         <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
-        <ul class="sub_menus">
+        <ul class="sub_menus" style="display:{{white_hidden}}">
             <li><a class="sub_menu" href="#">Главная</a></li>
             <li><a class="sub_menu" href="#">Контрагенты</a></li>
             <li><a class="sub_menu" href="#">Лимиты</a></li>
@@ -23,7 +23,7 @@
             <li><a class="sub_menu" href="#">Справка</a></li>
         </ul>
     </div>
-    <div class="profile_placeholder">
+    <div class="profile_placeholder" style="display:{{black_hidden}}">
         <div class="profile">
             <h3>Заводских Роман</h3>
             <h5>МФТИ</h5>
@@ -84,5 +84,6 @@
         </div>
     </div>
     <script src="js/opers.js"></script>
+    <script src="js/my_ng.js"></script>
     </body>
 </html>
