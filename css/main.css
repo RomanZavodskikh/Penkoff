@@ -2,8 +2,8 @@
     padding: 0;
     margin: 0;
 }
-#debug_info {
-    display: none;
+body {
+    background: #F6F7F9;
 }
 .block {
     background: #FFFFFF;
@@ -16,11 +16,11 @@
     stroke: rgb(255, 0, 0);
     stroke-width: 1;
 }
+#debug_info {
+    display: none;
+}
 #transactions_choose .sub_menu:hover {
     color: #000000;
-}
-body {
-    background: #F6F7F9;
 }
 .top_menu {
     background: #FFFFFF;
@@ -117,6 +117,9 @@ body {
     margin: 1px 0px 1px 0px;
     padding: 7px 0px;
 }
+.operation:hover {
+    background-color: lightyellow;
+}
 .operation .date {
     width: 7%;
     float: left;
@@ -168,8 +171,17 @@ body {
     body {
         font-size: 45px;
     }
+    .menu_hider {
+        width: 90px;
+        height: 90px;
+        border: 2px solid;
+        display: inline-block;
+    }
+    #black_menu_hider {
+        background-color: #3E4758;
+    }
     .sub_menus {
-        float: right;
+        display: none;
     }
     .sub_menu {
         font-size: 50px;
@@ -181,11 +193,11 @@ body {
         font-size: 55px;
     }
     .profile_placeholder {
+        display: none;
         top: auto;
         bottom: auto;
         position: static;
         width: 100%;
-        text-align: center;
     }
     .profile_placeholder .profile ul li {
         display: inline;
@@ -195,19 +207,18 @@ body {
         height: 150px;
     }
     .top_menu {
+        text-align: center;
         margin: auto;
         width: 100%;
     }
     .top_menu .sub_menus {
-        width: 40%;
         margin-top: 0px;
-        float: left;
     }
     .top_menu .sub_menus li {
         display: block;
     }
     .top_menu #logo {
-        width: 100%;
+        width: 80%;
     }
     .top_menu #create_payment {
         margin-top: 0px;
@@ -221,6 +232,19 @@ body {
     }
     .main_part #transactions_choose {
         display: none;
+    }
+    .operation .date {
+        width: 30%;
+    }
+    .operation .company {
+        width: 30%;
+    }
+    .operation .text {
+        display: none;
+    }
+    .operation .cash {
+        width: 35%;
+        float: left;
     }
     .rouble_account, .dollar_account {
         width: 100%;
