@@ -172,7 +172,7 @@ body {
         font-size: 45px;
     }
     .menu_hider {
-        width: 90px;
+        width: 40%;
         height: 90px;
         border: 2px solid;
         display: inline-block;
@@ -218,7 +218,7 @@ body {
         display: block;
     }
     .top_menu #logo {
-        width: 80%;
+        width: 100%;
     }
     .top_menu #create_payment {
         margin-top: 0px;
