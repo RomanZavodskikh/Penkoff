@@ -169,7 +169,7 @@ body {
 }
 @media screen and (max-width: 980px) {
     body {
-        font-size: medium;
+        font-size: xx-large;
     }
     .menu_hider {
         width: 40%;
