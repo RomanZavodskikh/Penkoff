@@ -20,4 +20,12 @@ app.controller("myCtrl", function($scope) {
             $scope.black_hidden = "none";
         }
     };
+
+    $scope.hide_modal = function () {
+        $scope.modal_display = "none";
+    };
+
+    $scope.show_modal = function () {
+        $scope.modal_display = "block";
+    };
 });

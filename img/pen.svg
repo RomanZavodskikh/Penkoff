@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="drawing.svg">
+   sodipodi:docname="pen.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
      inkscape:cx="192.30886"
-     inkscape:cy="131.88289"
+     inkscape:cy="-10.725597"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,34 +58,34 @@
     <circle
        style="fill:#ffff00"
        id="path3338"
-       cx="40.658642"
+       cx="75.508904"
        cy="1010.6935"
        r="26.516504" />
     <path
        sodipodi:type="spiral"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="path3342"
-       sodipodi:cx="40.406101"
+       sodipodi:cx="75.256363"
        sodipodi:cy="1009.9357"
        sodipodi:expansion="0.83999997"
        sodipodi:revolution="2.98752"
        sodipodi:radius="41.184628"
        sodipodi:argument="-20.74522"
        sodipodi:t0="0"
-       d="m 40.406101,1009.9357 c -1.049054,-3.1147 3.334235,-3.0689 4.857483,-1.636 3.224697,3.0336 1.293605,8.1915 -1.928954,10.3312 -5.284918,3.509 -12.285638,0.6527 -15.151961,-4.5783 -3.962332,-7.2312 -0.124768,-16.18067 6.981219,-19.6816 9.051687,-4.45954 19.920714,0.34601 24.01575,9.2418 4.968838,10.794 -0.781869,23.5392 -11.40415,28.2035 -12.479197,5.4797 -27.058862,-1.1938 -32.274794,-13.4924 -5.9881583,-14.1195 1.587994,-30.49605 15.521583,-36.24982 15.72257,-6.49252 33.86267,1.96841 40.143021,17.50193 6.992179,17.29409 -2.33766,37.16789 -19.440817,43.96529 -18.838235,7.487 -40.418918,-2.6976 -47.7250651,-21.3438 -7.5229531,-19.1995 1.832222,-41.2938 20.2442161,-50.14248" />
+       d="m 75.256363,1009.9357 c -1.049055,-3.1147 3.334234,-3.0689 4.857483,-1.636 3.224696,3.0336 1.293605,8.1915 -1.928954,10.3312 -5.284918,3.509 -12.285638,0.6527 -15.151961,-4.5783 -3.962333,-7.2312 -0.124768,-16.18067 6.981219,-19.6816 9.051686,-4.45954 19.920714,0.34601 24.01575,9.2418 4.968838,10.794 -0.781869,23.5392 -11.404151,28.2035 -12.479196,5.4797 -27.058861,-1.1938 -32.274793,-13.4924 -5.988159,-14.1195 1.587993,-30.49605 15.521583,-36.24982 15.72257,-6.49252 33.862669,1.96841 40.143021,17.50193 6.99218,17.29409 -2.33766,37.16789 -19.440817,43.96529 -18.838235,7.487 -40.418918,-2.6976 -47.725065,-21.3438 -7.522953,-19.1995 1.832222,-41.2938 20.244216,-50.14248" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="87.88327"
+       x="122.73354"
        y="981.65149"
        id="text3352"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3354"
-         x="87.88327"
+         x="122.73354"
          y="981.65149">Пенькофф</tspan><tspan
          sodipodi:role="line"
-         x="87.88327"
+         x="122.73354"
          y="1012.9015"
          id="tspan3356" /></text>
     <text
@@ -109,32 +109,32 @@
          sodipodi:role="line"
          id="tspan3364"
          x="93.944183"
-         y="1017.5119"></tspan></text>
+         y="1017.5119" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="91.923882"
+       x="126.77415"
        y="1009.4307"
        id="text3366"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3368"
-         x="91.923882"
+         x="126.77415"
          y="1009.4307">В фокусе новых</tspan><tspan
          sodipodi:role="line"
-         x="91.923882"
+         x="126.77415"
          y="1028.1807"
          id="tspan3370" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="116.67262"
+       x="151.52289"
        y="1031.6541"
        id="text3372"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3374"
-         x="116.67262"
+         x="151.52289"
          y="1031.6541">возможностей</tspan></text>
   </g>
 </svg>
