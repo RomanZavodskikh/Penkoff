@@ -180,6 +180,11 @@ body {
     #black_menu_hider {
         background-color: #3E4758;
     }
+    .menu_hider {
+        background-image: url('../img/menu.svg');
+        background-size: 100%;
+        background-position: left center;
+    }
     .sub_menus {
         display: none;
     }

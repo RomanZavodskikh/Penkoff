@@ -13,15 +13,15 @@
     </div>
     <div class="top_menu jumbotron">
         <img id="logo" src="img/pen.svg" alt="Логотип">
-        <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();"></span>
-        <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();"></span>
+        <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();" ng-style="white_menu_hider_style"></span>
+        <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();" ng-style="black_menu_hider_style"></span>
         <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
         <ul class="sub_menus" style="display:{{white_hidden}}">
-            <li><a class="sub_menu" href="#">Главная</a></li>
-            <li><a class="sub_menu" href="#">Контрагенты</a></li>
-            <li><a class="sub_menu" href="#">Лимиты</a></li>
-            <li><a class="sub_menu" href="#">Тариф</a></li>
-            <li><a class="sub_menu" href="#">Справка</a></li>
+            <li><a class="sub_menu" href="#" ng-click="show_modal()">Главная</a></li>
+            <li><a class="sub_menu" href="#" ng-click="show_modal()">Контрагенты</a></li>
+            <li><a class="sub_menu" href="#" ng-click="show_modal()">Лимиты</a></li>
+            <li><a class="sub_menu" href="#" ng-click="show_modal()">Тариф</a></li>
+            <li><a class="sub_menu" href="#" ng-click="show_modal()">Справка</a></li>
         </ul>
     </div>
     <div class="profile_placeholder" style="display:{{black_hidden}}">
@@ -30,12 +30,12 @@
             <h5>МФТИ</h5>
             <div class="delimeter"></div>
             <ul>
-                <li><a href="#" id="rko" class="right_menu">РКО</a></li>
-                <li><a href="#" id="salary_project" class="right_menu">Зарплатный проект</a></li>
-                <li><a href="#" id="acquiring" class="right_menu">Эквайринг</a></li>
-                <li><a href="#" id="buy_by_credit" class="right_menu">КВК</a></li>
-                <li><a href="#" id="accounting" class="right_menu">Бухгалтерия</a></li>
-                <li><a href="#" id="settings" class="right_menu">Панель управления</a></li>
+                <li><a href="#" id="rko" class="right_menu" ng-click="show_modal()">РКО</a></li>
+                <li><a href="#" id="salary_project" class="right_menu" ng-click="show_modal()">Зарплатный проект</a></li>
+                <li><a href="#" id="acquiring" class="right_menu" ng-click="show_modal()">Эквайринг</a></li>
+                <li><a href="#" id="buy_by_credit" class="right_menu" ng-click="show_modal()">КВК</a></li>
+                <li><a href="#" id="accounting" class="right_menu" ng-click="show_modal()">Бухгалтерия</a></li>
+                <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
             </ul>
             <div id="ads">
                 <h1 class="ad_header">Не экономьте на платежах.</h1> Совершайте неограниченное число платежей за 990 рублей в месяц
@@ -74,7 +74,7 @@
                     <a id="rej" class="tr_type" href="#">Отклонённые</a>
                     <a id="file" class="tr_ype" href="#">Картотека</a>
                 </div>
-                <div id="transactions" ng-click="show_modal()">
+                <div id="transactions">
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
     </div>
     <div class="modal" ng-click="hide_modal()" style="display:{{modal_display}}">
         <div class="modal_content">
-            Это, по типу, модальное окно.
+            Ссылка, на которую вы нажали, является всего лишь элементом декорации.
         </div>
     </div>
     <script src="js/opers.js"></script>
