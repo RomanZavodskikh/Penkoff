@@ -191,10 +191,7 @@ body {
     .sub_menu {
         font-size: xx-large;
     }
-    h3 {
-        font-size: xx-large;
-    }
-    h5, li, a {
+    h1, h3, h5, li, a {
         font-size: xx-large;
     }
     .profile_placeholder {
