@@ -87,7 +87,6 @@ body {
     text-decoration: none;
     text-align: center;
     min-width: 80px;
-    //font-size: medium;
     float: left;
 }
 .top_options .sub_menu:hover {
@@ -146,9 +145,6 @@ body {
     display: block;
     margin: 2px;
 }
-.ad_header {
-    //font-size: large;
-}
 #transactions_choose {
     width: 100%;
     padding-bottom: 3px;
@@ -174,8 +170,7 @@ body {
 }
 @media screen and (max-width: 980px) {
     body {
-        font: 2em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
-        //font-size: xx-large;
+        font: 3em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .menu_hider {
         width: 40%;
@@ -193,15 +188,6 @@ body {
     }
     .sub_menus {
         display: none;
-    }
-    .sub_menu {
-        //font-size: xx-large;
-    }
-    .ad_header {
-        //font-size: xx-large;
-    }
-    h1, h3, h5, li, a {
-        //font-size: xx-large;
     }
     .profile_placeholder {
         display: none;
@@ -235,7 +221,6 @@ body {
         margin-top: 0px;
         float: none;
         width: 90%;
-        //font-size: xx-large;
     }
     .right_menu {
     }
