@@ -189,13 +189,13 @@ body {
         display: none;
     }
     .sub_menu {
-        font-size: medium;
+        font-size: x-large;
     }
     h3 {
-        font-size: medium;
+        font-size: x-large;
     }
     h5, li, a {
-        font-size: medium;
+        font-size: x-large;
     }
     .profile_placeholder {
         display: none;
