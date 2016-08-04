@@ -4,6 +4,7 @@
 }
 body {
     background: #F6F7F9;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .block {
     background: #FFFFFF;
@@ -11,6 +12,7 @@ body {
     margin: 2px 0px;
     border: solid 1px #c7c9cc;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 .line {
     stroke: rgb(255, 0, 0);
@@ -85,7 +87,7 @@ body {
     text-decoration: none;
     text-align: center;
     min-width: 80px;
-    font-size: medium;
+    //font-size: medium;
     float: left;
 }
 .top_options .sub_menu:hover {
@@ -145,7 +147,7 @@ body {
     margin: 2px;
 }
 .ad_header {
-    font-size: large;
+    //font-size: large;
 }
 #transactions_choose {
     width: 100%;
@@ -158,18 +160,22 @@ body {
     color: #C7C8CA;
     width: 16%;
 }
+.accounts {
+    width: 100%;
+}
 .rouble_account {
     width: 47%;
 }
 .accounts_border {
-    width: 6%;
 }
 .dollar_account {
     width: 47%;
+    float: right;
 }
 @media screen and (max-width: 980px) {
     body {
-        font-size: xx-large;
+        font: 2em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
+        //font-size: xx-large;
     }
     .menu_hider {
         width: 40%;
@@ -189,13 +195,13 @@ body {
         display: none;
     }
     .sub_menu {
-        font-size: xx-large;
+        //font-size: xx-large;
     }
     .ad_header {
-        font-size: xx-large;
+        //font-size: xx-large;
     }
     h1, h3, h5, li, a {
-        font-size: xx-large;
+        //font-size: xx-large;
     }
     .profile_placeholder {
         display: none;
@@ -227,8 +233,9 @@ body {
     }
     .top_menu #create_payment {
         margin-top: 0px;
-        width: 100%;
-        font-size: xx-large;
+        float: none;
+        width: 90%;
+        //font-size: xx-large;
     }
     .right_menu {
     }

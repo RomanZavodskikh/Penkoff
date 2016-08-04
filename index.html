@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/button.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <script src="js/jquery-3.1.0.min.js"></script>
@@ -11,7 +11,7 @@
     <body ng-app="myApp" ng-controller="myCtrl" style="background-color:{{bck_color}}">
     <div id="debug_info">
     </div>
-    <div class="top_menu jumbotron">
+    <div class="top_menu">
         <img id="logo" src="img/pen.svg" alt="Логотип">
         <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();" ng-style="white_menu_hider_style"></span>
         <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();" ng-style="black_menu_hider_style"></span>
@@ -26,8 +26,8 @@
     </div>
     <div class="profile_placeholder" style="display:{{black_hidden}}">
         <div class="profile">
-            <h3>Заводских Роман</h3>
-            <h5>МФТИ</h5>
+            <h2>Заводских Роман</h2>
+            <h4>МФТИ</h4>
             <div class="delimeter"></div>
             <ul>
                 <li><a href="#" id="rko" class="right_menu" ng-click="show_modal()">РКО</a></li>
@@ -38,50 +38,43 @@
                 <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
             </ul>
             <div id="ads">
-                <h1 class="ad_header">Не экономьте на платежах.</h1> Совершайте неограниченное число платежей за 990 рублей в месяц
+                <h4 class="ad_header">Не экономьте на платежах.</h4> Совершайте неограниченное число платежей за 990 рублей в месяц
             </div>
         </div>
         <span class="color_choose" id="grey_bck" ng-click="bck_color='#F6F7F9'"></span>
         <span class="color_choose" id="blue_bck" ng-click="bck_color='#0000ff'"></span>
         <span class="color_choose" id="purp_bck" ng-click="bck_color='#8b00ff'"></span>
     </div>
-    <div class="main_part container">
-        <div class="row">
-            <div class="rouble_account block col-sm-5">
+    <div class="main_part">
+        <div class="accounts">
+            <div class="rouble_account block">
                     Ваш рублёвый счёт <br> 0р
                     <svg id="rouble_svg" height="300" width="100%">
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
-            <div class="accounts_border col-sm-2"></div>
-            <div class="dollar_account block col-sm-5">
+            <div class="dollar_account block">
                     Ваш долларовый счёт <br> 0$
                     <svg id="dollar_svg" height="300" width="100%">
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
         </div>
-        <div class="row">
-            <div class="exchange_rates block col-sm-12">Курсы валют: доллар стоит 63.85р, евро стоит 72.01р</div>
-        </div>
-        <div class="row">
-            <div class="transaction block col-sm-12">
-                <div id="transactions_choose">
-                    <a id="done" class="tr_type" href="#">Выполненные</a>
-                    <a id="draft" class="tr_type" href="#">Черновики</a>
-                    <a id="sign" class="tr_type" href="#">На подпись</a>
-                    <a id="queue" class="tr_type" href="#">Очередь оплаты</a>
-                    <a id="rej" class="tr_type" href="#">Отклонённые</a>
-                    <a id="file" class="tr_ype" href="#">Картотека</a>
-                </div>
-                <div id="transactions">
-                </div>
+        <div class="exchange_rates block">Курсы валют: доллар стоит 63.85р, евро стоит 72.01р</div>
+        <div class="transaction block">
+            <div id="transactions_choose">
+                <a id="done" class="tr_type" href="#">Выполненные</a>
+                <a id="draft" class="tr_type" href="#">Черновики</a>
+                <a id="sign" class="tr_type" href="#">На подпись</a>
+                <a id="queue" class="tr_type" href="#">Очередь оплаты</a>
+                <a id="rej" class="tr_type" href="#">Отклонённые</a>
+                <a id="file" class="tr_ype" href="#">Картотека</a>
+            </div>
+            <div id="transactions">
             </div>
         </div>
-        <div class="row">
-            <div class="copyright block col-sm-12">
-                    &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
-            </div>
+        <div class="copyright block">
+            &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
         </div>
     </div>
     <div class="modal" ng-click="hide_modal()" style="display:{{modal_display}}">
