@@ -145,7 +145,7 @@ body {
     margin: 2px;
 }
 .ad_header {
-    font-size: larger;
+    font-size: large;
 }
 #transactions_choose {
     width: 100%;
@@ -169,7 +169,7 @@ body {
 }
 @media screen and (max-width: 980px) {
     body {
-        font-size: 45px;
+        font-size: medium;
     }
     .menu_hider {
         width: 40%;
@@ -189,13 +189,13 @@ body {
         display: none;
     }
     .sub_menu {
-        font-size: 50px;
+        font-size: medium;
     }
     h3 {
-        font-size: 60px;
+        font-size: medium;
     }
     h5, li, a {
-        font-size: 55px;
+        font-size: medium;
     }
     .profile_placeholder {
         display: none;
@@ -228,7 +228,7 @@ body {
     .top_menu #create_payment {
         margin-top: 0px;
         width: 100%;
-        font-size: 45px;
+        font-size: large;
     }
     .right_menu {
     }
