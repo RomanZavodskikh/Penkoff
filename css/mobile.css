@@ -1,4 +1,4 @@
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 53em) {
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
@@ -67,6 +67,7 @@
         float: none;
         width: 90%;
         font-size: 1.4em;
+        box-sizing: border-box;
     }
     .main_part {
         width: 90%;
@@ -92,5 +93,11 @@
     }
     .accounts_border {
         width: 0px;
+    }
+}
+
+@media screen and (max-width: 45em) {
+    .sub_menu {
+        min-width: 7em;
     }
 }
