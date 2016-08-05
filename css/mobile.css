@@ -42,6 +42,9 @@
         width: 100%;
         font-size: 1.2em;
     }
+    .profile_placeholder #grey_bck {
+        margin-left: 4%;
+    }
     .profile_placeholder .profile ul li {
         display: inline-block;
         min-width: 80%;
