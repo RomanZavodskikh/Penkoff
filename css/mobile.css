@@ -4,7 +4,7 @@
     }
     .menu_hider {
         width: 40%;
-        height: 90px;
+        height: 60px;
         border: 2px solid;
         display: inline-block;
     }
@@ -17,13 +17,18 @@
         background-position: left center;
     }
     .sub_menu {
-        width: 20%;
-        margin: 1px 0px;
+        width: 80%;
+        margin: 1px auto;
         font-size: 1.2em;
         padding: 15px;
         box-sizing: border-box;
+        border: 1px solid;
+        border-radius: 15px;
+        float: none;
+        display: block;
     }
     .sub_menus {
+        margin: 0 auto;
         display: none;
     }
     .sub_menus li {
@@ -39,8 +44,13 @@
     }
     .profile_placeholder .profile ul li {
         display: inline-block;
-        min-width: 33%;
+        min-width: 80%;
         padding: 5px;
+        text-align: center;
+        /*!  */
+        box-sizing: border-box;
+        margin-left: 10%;
+        margin-right: auto;
     }
     .profile_placeholder .color_choose {
         width: 300px;
@@ -96,8 +106,3 @@
     }
 }
 
-@media screen and (max-width: 600px) {
-    .sub_menu {
-        min-width: 7em;
-    }
-}
