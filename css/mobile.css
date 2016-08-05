@@ -1,4 +1,4 @@
-@media handeld {
+@media (orientation: portrait) {
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
