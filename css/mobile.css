@@ -57,8 +57,10 @@
     }
     .profile_placeholder .color_choose {
         width: 30%;
-        height: 150px;
+        height: 50px;
         border-radius: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .profile_placeholder h1,h2,h3,h4 {
         padding: 10px;
