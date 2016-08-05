@@ -1,4 +1,4 @@
-@media (min-resolution: 200dpi) {
+@media (max-width: 880px) {
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
