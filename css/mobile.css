@@ -1,4 +1,4 @@
-@media screen and (max-width: 100em) {
+@media screen and (max-width: 800px) {
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
@@ -96,7 +96,7 @@
     }
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 600px) {
     .sub_menu {
         min-width: 7em;
     }
