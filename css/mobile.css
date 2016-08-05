@@ -20,6 +20,8 @@
         width: 20%;
         margin: 1px 0px;
         font-size: 1.2em;
+        padding: 15px;
+        box-sizing: border-box;
     }
     .sub_menus {
         display: none;
@@ -38,10 +40,15 @@
     .profile_placeholder .profile ul li {
         display: inline-block;
         min-width: 33%;
+        padding: 5px;
     }
     .profile_placeholder .color_choose {
         width: 300px;
         height: 150px;
+        border-radius: 50px;
+    }
+    .profile_placeholder h1,h2,h3,h4 {
+        padding: 10px;
     }
     .top_menu {
         text-align: center;
