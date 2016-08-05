@@ -51,9 +51,12 @@
         box-sizing: border-box;
         margin-left: 10%;
         margin-right: auto;
+        border: 1px solid white;
+        border-radius: 15px;
+        margin-top: 5px;
     }
     .profile_placeholder .color_choose {
-        width: 300px;
+        width: 30%;
         height: 150px;
         border-radius: 50px;
     }
