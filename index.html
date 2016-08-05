@@ -10,7 +10,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.js"></script>
     </head>
-    <body ng-app="myApp" ng-controller="myCtrl" style="background-color:{{bck_color}}">
+    <body ng-app="myApp" ng-controller="myCtrl" ng-style="body_style">
     <div id="debug_info">
     </div>
     <div class="top_menu">
@@ -18,7 +18,7 @@
         <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();" ng-style="white_menu_hider_style"></span>
         <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();" ng-style="black_menu_hider_style"></span>
         <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
-        <ul class="sub_menus" style="display:{{white_hidden}}">
+        <ul class="sub_menus" ng-style="white_menu_style">
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Главная</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Контрагенты</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Лимиты</a></li>
@@ -26,7 +26,7 @@
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Справка</a></li>
         </ul>
     </div>
-    <div class="profile_placeholder" style="display:{{black_hidden}}">
+    <div class="profile_placeholder" ng-style="black_menu_style">
         <div class="profile">
             <h2>Заводских Роман</h2>
             <h4>МФТИ</h4>
@@ -43,9 +43,9 @@
                 <h4 class="ad_header">Не экономьте на платежах.</h4> Совершайте неограниченное число платежей за 990 рублей в месяц
             </div>
         </div>
-        <span class="color_choose" id="grey_bck" ng-click="bck_color='#F6F7F9'"></span>
-        <span class="color_choose" id="blue_bck" ng-click="bck_color='#0000ff'"></span>
-        <span class="color_choose" id="purp_bck" ng-click="bck_color='#8b00ff'"></span>
+        <span class="color_choose" id="grey_bck" ng-click="make_body_grey()"></span>
+        <span class="color_choose" id="blue_bck" ng-click="make_body_blue()"></span>
+        <span class="color_choose" id="purp_bck" ng-click="make_body_violet()"></span>
     </div>
     <div class="main_part">
         <div class="accounts">
@@ -79,7 +79,7 @@
             &#x24B8 2016-2016 АО "Пенькофф Банк", официальный сайт, лицензия высосана из пальца Заводских Романа
         </div>
     </div>
-    <div class="modal" ng-click="hide_modal()" style="display:{{modal_display}}">
+    <div class="modal" ng-click="hide_modal()" ng-style="modal_style">
         <div class="modal_content">
             Ссылка, на которую вы нажали, является всего лишь элементом декорации.
         </div>
