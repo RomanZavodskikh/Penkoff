@@ -89,6 +89,8 @@
         display: none;
     }
     .operation .date {
+        margin-left: 5%;
+        text-align: left;
         position: static;
         width: 40%;
     }
