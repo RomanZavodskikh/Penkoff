@@ -47,14 +47,10 @@
     }
     .profile_placeholder .profile ul li {
         display: inline-block;
-        min-width: 80%;
+        min-width: 100%;
         padding: 5px;
         text-align: center;
-        /*!  */
         box-sizing: border-box;
-        margin-left: 10%;
-        margin-right: auto;
-        /*! border: 1px solid white; */
         border-radius: 15px;
         margin-top: 5px;
     }

@@ -99,15 +99,16 @@ body {
     margin-left: 5%;
 }
 .exchange_rates {
-    text-align: center;
     width: 100%;
 }
 .dollar_exchange {
-    margin-right: 20%;
+    margin-left: 20%;
+    float: left;
     display: inline;
 }
 .euro_exchange {
-    margin-left: 20%;
+    margin-right: 20%;
+    float: right;
     display: inline;
 }
 .transaction {
