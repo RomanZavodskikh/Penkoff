@@ -89,9 +89,13 @@
         display: none;
     }
     .operation .date {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         width: 30%;
     }
     .operation .company {
+        left: 32%;
         width: 30%;
     }
     .operation .text {
