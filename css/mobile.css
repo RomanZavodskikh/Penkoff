@@ -92,6 +92,7 @@
     }
     .operation {
         margin: 0px;
+        border-width: 1px 0px 0px 0px;
     }
     .operation .date {
         padding-left: 5%;
@@ -119,5 +120,8 @@
     }
     .right_menu {
         font-size: 1.2em;
+    }
+    #op0 {
+        border-top: 0px;
     }
 }
