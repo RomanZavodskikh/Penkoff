@@ -15,8 +15,6 @@
     </div>
     <div class="top_menu">
         <img id="logo" src="img/pen.svg" alt="Логотип">
-        <span class="menu_hider" id="white_menu_hider" ng-click="toggle_white();" ng-style="white_menu_hider_style"></span>
-        <span class="menu_hider" id="black_menu_hider" ng-click="toggle_black();" ng-style="black_menu_hider_style"></span>
         <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
         <ul class="sub_menus" ng-style="white_menu_style">
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Главная</a></li>
@@ -25,6 +23,11 @@
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Тариф</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Справка</a></li>
         </ul>
+        <div class="just_mobile">
+            <img class="mobile_menu_icon" id="menu_mob" src="img/menu.svg" alt="">
+            <img class="mobile_menu_icon" id="logo_mob" src="img/pen_just_logo.svg" alt="">
+            <img class="mobile_menu_icon" id="profile_mob" src="img/profile.svg" alt="">
+        </div>
     </div>
     <div class="profile_placeholder" ng-style="black_menu_style">
         <div class="profile">

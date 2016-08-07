@@ -189,3 +189,6 @@ body {
     width: 47%;
     float: right;
 }
+.just_mobile {
+    display: none;
+}
