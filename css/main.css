@@ -102,6 +102,14 @@ body {
     text-align: center;
     width: 100%;
 }
+.dollar_exchange {
+    margin-right: 20%;
+    display: inline;
+}
+.euro_exchange {
+    margin-left: 20%;
+    display: inline;
+}
 .transaction {
     text-align: center;
     width: 100%;
@@ -117,21 +125,33 @@ body {
     border-width: 1px 0px 1px 0px;
     margin: 1px 0px 1px 0px;
     padding: 7px 0px;
+    position: relative;
 }
 .operation:hover {
     background-color: lightyellow;
 }
 .operation .date {
-    width: 7%;
-    float: left;
+    width: 12%;
+    position: absolute;
+    left: 0%;
 }
 .operation .company {
     width: 15%;
-    float: left;
+    position: relative;
+    left: 12%;
 }
 .operation .text {
     width: 60%;
-    float: left;
+    position: absolute;
+    left: 27%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.operation .cash {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .delimeter {
     width: 100%;
@@ -144,6 +164,7 @@ body {
     color: inherit;
     display: block;
     margin: 2px;
+    font-size: 1.2em;
 }
 #transactions_choose {
     width: 100%;
