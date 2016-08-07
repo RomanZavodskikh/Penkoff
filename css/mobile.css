@@ -84,13 +84,17 @@
         display: none;
         width: 100%;
     }
-    .top_menu #create_payment {
-        display: none;
+    .top_menu .sub_menus #create_payment {
         margin-top: 0px;
         float: none;
         width: 90%;
         font-size: 1.4em;
         box-sizing: border-box;
+    }
+    .top_menu .sub_menus .menu_close {
+        display: block;
+        float: right;
+        margin-right: 5%;
     }
     .main_part {
         width: 98%;

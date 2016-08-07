@@ -14,6 +14,15 @@ app.controller("myCtrl", function($scope) {
         $scope.black_menu_style = {};
     }
 
+    $scope.show_menu = function () {
+        $scope.white_menu_style = {display: "block", position: "fixed", height: "100%", zIndex: 1, width: "100%", overflow: "auto",
+            left: "0", top: "0", background: "#FFFFFF"};
+    }
+
+    $scope.hide_menu = function () {
+        $scope.white_menu_style = {};
+    }
+
     $scope.hide_modal = function () {
         $scope.modal_style = {display: "none"};
     };

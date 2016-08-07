@@ -15,16 +15,18 @@
     </div>
     <div class="top_menu">
         <img id="logo" src="img/pen.svg" alt="Логотип">
-        <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
+
         <ul class="sub_menus" ng-style="white_menu_style">
+            <span class="menu_close" ng-click="hide_menu()">x</span>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Главная</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Контрагенты</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Лимиты</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Тариф</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Справка</a></li>
+            <a id="create_payment" class="btn btn-default" href="#">Создать платёж</a>
         </ul>
         <div class="just_mobile">
-            <img class="mobile_menu_icon" id="menu_mob" src="img/menu.svg" alt="">
+            <img class="mobile_menu_icon" id="menu_mob" src="img/menu.svg" alt="" ng-click="show_menu()">
             <img class="mobile_menu_icon" id="logo_mob" src="img/pen_just_logo.svg" alt="">
             <img class="mobile_menu_icon" id="profile_mob" src="img/profile.svg" alt="" ng-click="show_profile()">
         </div>

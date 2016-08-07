@@ -42,7 +42,7 @@ body {
 .top_menu .sub_menus li {
     display: inline;
 }
-.top_menu #create_payment {
+.top_menu .sub_menus #create_payment {
     margin-top: 20px;
     float: left;
 }
@@ -193,5 +193,8 @@ body {
     display: none;
 }
 .profile_close {
+    display: none;
+}
+.menu_close {
     display: none;
 }
