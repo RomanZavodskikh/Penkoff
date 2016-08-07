@@ -1,9 +1,18 @@
-    var app = angular.module('myApp', []);
+var app = angular.module('myApp', []);
 app.controller("myCtrl", function($scope) {
     $scope.body_style = {};
     $scope.modal_style = {};
     $scope.white_menu_style = {};
     $scope.black_menu_style = {};
+
+    $scope.show_profile = function () {
+        $scope.black_menu_style = {display: "block", position: "fixed", height: "100%", zIndex: 1, width: "100%", overflow: "auto",
+            left: "0", top: "0"};
+    };
+
+    $scope.hide_profile = function () {
+        $scope.black_menu_style = {};
+    }
 
     $scope.hide_modal = function () {
         $scope.modal_style = {display: "none"};

@@ -26,11 +26,12 @@
         <div class="just_mobile">
             <img class="mobile_menu_icon" id="menu_mob" src="img/menu.svg" alt="">
             <img class="mobile_menu_icon" id="logo_mob" src="img/pen_just_logo.svg" alt="">
-            <img class="mobile_menu_icon" id="profile_mob" src="img/profile.svg" alt="">
+            <img class="mobile_menu_icon" id="profile_mob" src="img/profile.svg" alt="" ng-click="show_profile()">
         </div>
     </div>
     <div class="profile_placeholder" ng-style="black_menu_style">
         <div class="profile">
+            <span class="profile_close" ng-click="hide_profile()">x</span>
             <h2>Заводских Роман</h2>
             <h4>МФТИ</h4>
             <div class="delimeter"></div>
