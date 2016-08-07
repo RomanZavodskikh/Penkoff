@@ -89,10 +89,10 @@
         display: none;
     }
     .operation .date {
-        margin-left: 5%;
+        padding-left: 5%;
         text-align: left;
         position: static;
-        width: 40%;
+        width: 50%;
     }
     .operation .company {
         display: none;
@@ -101,7 +101,9 @@
         display: none;
     }
     .operation .cash {
-        width: 35%;
+        text-align: right;
+        padding-right: 5%;
+        width: 50%;
     }
     .rouble_account, .dollar_account {
         width: 100%;
