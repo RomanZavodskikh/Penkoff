@@ -107,6 +107,7 @@
     }
     .rouble_account, .dollar_account {
         width: 100%;
+        padding: 7px;
     }
     .accounts_border {
         width: 0px;
