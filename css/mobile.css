@@ -29,6 +29,9 @@
     .profile_placeholder #grey_bck {
         margin-left: 4%;
     }
+    .profile_placeholder .profile .delimeter {
+        float: right;
+    }
     .profile_placeholder .profile ul li {
         display: inline-block;
         min-width: 100%;
@@ -48,10 +51,13 @@
     .profile_placeholder h1,h2,h3,h4 {
         padding: 10px;
     }
+    .profile_placeholder .name,.organization {
+        float: right;
+    }
     .profile_placeholder .profile_close {
         display: block;
-        float: right;
-        margin-right: 5%;
+        float: left;
+        margin-left: 5%;
     }
     .top_menu {
         height: 40px;
@@ -79,8 +85,8 @@
     }
     .top_menu .sub_menus .menu_close {
         display: block;
-        float: right;
-        margin-right: 5%;
+        float: left;
+        margin-left: 5%;
     }
     .main_part {
         width: 98%;
