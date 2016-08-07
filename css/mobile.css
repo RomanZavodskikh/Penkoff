@@ -2,20 +2,6 @@
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    .menu_hider {
-        width: 40%;
-        height: 60px;
-        border: 2px solid;
-        display: inline-block;
-    }
-    #black_menu_hider {
-        background-color: #3E4758;
-    }
-    .menu_hider {
-        background-image: url('../img/menu.svg');
-        background-size: 100%;
-        background-position: left center;
-    }
     .sub_menu {
         width: 80%;
         margin: 1px auto;

@@ -49,9 +49,11 @@
                 <h4 class="ad_header">Не экономьте на платежах.</h4> Совершайте неограниченное число платежей за 990 рублей в месяц
             </div>
         </div>
-        <span class="color_choose" id="grey_bck" ng-click="make_body_grey()"></span>
-        <span class="color_choose" id="blue_bck" ng-click="make_body_blue()"></span>
-        <span class="color_choose" id="purp_bck" ng-click="make_body_violet()"></span>
+        <div class="colors">
+            <span class="color_choose" id="grey_bck" ng-click="make_body_grey()" ng-style="grey_style"></span>
+            <span class="color_choose" id="blue_bck" ng-click="make_body_blue()" ng-style="blue_style"></span>
+            <span class="color_choose" id="purp_bck" ng-click="make_body_violet()" ng-style="purp_style"></span>
+        </div>
     </div>
     <div class="main_part">
         <div class="accounts">

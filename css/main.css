@@ -56,15 +56,24 @@ body {
     position: fixed;
     width: 20%;
 }
+.profile_placeholder .profile {
+    padding: 3px;
+}
 .profile_placeholder .profile ul {
     padding: 3px;
     list-style-type: none;
 }
+.profile_placeholder .colors {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
 .profile_placeholder .color_choose {
-    width: 50px;
+    width: 20%;
     height: 50px;
     display: inline-block;
     margin: 5px;
+    box-sizing: border-box;
 }
 .profile_placeholder #grey_bck {
     background-color: #F6F7F9;
