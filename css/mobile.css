@@ -63,6 +63,8 @@
         padding: 10px;
     }
     .top_menu {
+        border-bottom: 1px solid #c7c9cc;
+        padding: 5px;
         text-align: center;
         margin: auto;
         width: 100%;
