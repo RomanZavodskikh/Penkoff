@@ -83,10 +83,15 @@
         box-sizing: border-box;
     }
     .main_part {
-        width: 90%;
+        width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
     }
     .main_part #transactions_choose {
         display: none;
+    }
+    .operation {
+        margin: 0px;
     }
     .operation .date {
         padding-left: 5%;
