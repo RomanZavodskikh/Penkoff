@@ -57,6 +57,7 @@ body {
     width: 20%;
 }
 .profile_placeholder .profile ul {
+    padding: 3px;
     list-style-type: none;
 }
 .profile_placeholder .color_choose {
@@ -100,16 +101,14 @@ body {
 }
 .exchange_rates {
     width: 100%;
+    text-align: center;
 }
-.dollar_exchange {
-    margin-left: 20%;
-    float: left;
+.exchange_rates * {
     display: inline;
 }
-.euro_exchange {
-    margin-right: 20%;
-    float: right;
-    display: inline;
+.exchange_delimeter {
+    display: inline-block;
+    width: 10%;
 }
 .transaction {
     text-align: center;
