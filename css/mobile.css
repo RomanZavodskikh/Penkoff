@@ -72,23 +72,28 @@
         box-sizing: border-box;
     }
     .top_menu .sub_menus {
+        text-align: center;
+        position: static;
         margin-top: 0px;
         width: 100%;
+        transform: none;
     }
     .top_menu #logo {
         display: none;
         width: 100%;
     }
+    .top_menu .sub_menus .sub_menu {
+        width: 100%;
+    }
     .top_menu .sub_menus #create_payment {
-        margin-top: 0px;
-        float: none;
-        width: 90%;
         font-size: 1.4em;
-        box-sizing: border-box;
     }
     .top_menu .sub_menus .menu_close {
+        font-size: 1.4em;
+        position: absolute;
         display: block;
         float: left;
+        margin-top: 2%;
         margin-left: 5%;
     }
     .main_part {

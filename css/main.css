@@ -25,26 +25,33 @@ body {
     color: #000000;
 }
 .top_menu {
+    position: relative;
     background: #FFFFFF;
     border-bottom: 2px solid #c7c9cc;
     display: inline-block;
     padding: 2px;
     width: 79%;
 }
-.top_menu #logo {
-    float: left;
-}
 .top_menu .sub_menus {
     list-style-type: none;
-    float: left;
-    margin-top: 25px;
+    position: absolute;
+    left: 310px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .top_menu .sub_menus li {
     display: inline;
 }
-.top_menu .sub_menus #create_payment {
-    margin-top: 20px;
+.top_menu .sub_menus .sub_menu {
+    margin: 1px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: 0px 5px;
     float: left;
+}
+.top_menu .sub_menus .sub_menu:hover {
+    color: #C7C8CA;
 }
 .profile_placeholder {
     top: 0%;
@@ -62,6 +69,9 @@ body {
 .profile_placeholder .profile ul {
     padding: 3px;
     list-style-type: none;
+}
+.profile_placeholder .profile ul li a:hover {
+    color: #C7C8CA;
 }
 .profile_placeholder .colors {
     display: inline-block;
@@ -90,17 +100,6 @@ body {
     background: #6195bf;
     background: linear-gradient(to top, #42aaff, #808080);
     margin-top: 5px;
-}
-.sub_menu {
-    margin: 1px;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    min-width: 80px;
-    float: left;
-}
-.top_options .sub_menu:hover {
-    color: #C7C8CA;
 }
 .main_part {
     width: 70%;
