@@ -2,17 +2,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="css/button.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
-        <script src="js/jquery-3.1.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
         <script src="js/angular.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="myCtrl" ng-style="body_style">
-    <div id="debug_info">
-    </div>
     <div class="top_menu">
         <img id="logo" src="img/pen.svg" alt="Логотип">
 
@@ -43,7 +38,7 @@
                 <li><a href="#" id="acquiring" class="right_menu" ng-click="show_modal()">Эквайринг</a></li>
                 <li><a href="#" id="buy_by_credit" class="right_menu" ng-click="show_modal()">КВК</a></li>
                 <li><a href="#" id="accounting" class="right_menu" ng-click="show_modal()">Бухгалтерия</a></li>
-                <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
+                    <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
             </ul>
             <div id="ads">
                 <h4 class="ad_header">Не экономьте на платежах.</h4> Совершайте неограниченное число платежей за 990 рублей в месяц
@@ -60,12 +55,26 @@
             <div class="rouble_account block">
                     Рублёвый счёт <br> 0р
                     <svg id="rouble_svg" height="300" width="100%">
+                        <g class="line_grouper">
+                            <line ng-repeat="trans in transactionsRouble | reverse"
+                                  class="line" x1="{{returnx1($index, 'rouble', transactionsRouble.length)}}"
+                                               x2="{{returnx2($index, 'rouble', transactionsRouble.length)}}"
+                                               y1="{{returny1($index, 'rouble', transactionsRouble.length)}}"
+                                               y2="{{returny2($index, 'rouble', transactionsRouble.length, trans)}}" />
+                        </g>
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
             <div class="dollar_account block">
                     Долларовый счёт <br> 0$
                     <svg id="dollar_svg" height="300" width="100%">
+                        <!-- <g class="line_grouper">
+                            <line ng-repeat="trans in transactionsDollar | reverse"
+                                  class="line" x1="{{returnx1($index, 'dollar', transactionsDollar.length)}}"
+                                               x2="{{returnx2($index, 'dollar', transactionsDollar.length)}}"
+                                               y1="{{returny1($index, 'dollar', transactionsDollar.length)}}"
+                                               y2="{{returny2($index, 'dollar', transactionsDollar.length, trans)}}" />
+                        </g> -->
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
@@ -81,15 +90,19 @@
             </div>
         </div>
         <div class="transaction block">
-            <div id="transactions_choose">
-                <a id="done" class="tr_type" href="#">Выполненные</a>
-                <a id="draft" class="tr_type" href="#">Черновики</a>
-                <a id="sign" class="tr_type" href="#">На подпись</a>
-                <a id="queue" class="tr_type" href="#">Очередь оплаты</a>
-                <a id="rej" class="tr_type" href="#">Отклонённые</a>
-                <a id="file" class="tr_ype" href="#">Картотека</a>
-            </div>
-            <div id="transactions">
+            <div ng-repeat="trans in transactions">
+                <div class="operation" ng-if="!$last">
+                    <div class="date">{{dateFormat(trans.date_str)}}</div>
+                    <div class="company">{{trans.company}}</div>
+                    <div class="text">{{trans.text}}</div>
+                    <div class="cash">{{trans.cash+trans.currency}}</div>
+                </div>
+                <div class="operation" ng-if="$last" style="border-bottom: 0px">
+                    <div class="date">{{dateFormat(trans.date_str)}}</div>
+                    <div class="company">{{trans.company}}</div>
+                    <div class="text">{{trans.text}}</div>
+                    <div class="cash">{{trans.cash+trans.currency}}</div>
+                </div>
             </div>
         </div>
         <div class="copyright block">
@@ -101,7 +114,6 @@
             Ссылка, на которую вы нажали, является всего лишь элементом декорации.
         </div>
     </div>
-    <script src="js/opers.js"></script>
     <script src="js/my_ng.js"></script>
     </body>
 </html>

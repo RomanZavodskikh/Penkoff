@@ -1,10 +1,102 @@
+'use strict';
 var app = angular.module('myApp', []);
+app.filter('reverse', function() {
+    return function(items) {
+        return items.slice().reverse();
+    };
+});
 app.controller("myCtrl", function($scope) {
-    $scope.body_style = {};
-    $scope.modal_style = {};
-    $scope.white_menu_style = {};
-    $scope.black_menu_style = {};
     $scope.grey_style = {border: "3px black solid"};
+
+    $scope.createTrans = function  (corp, text, cash, curr, date) {
+        return {
+            company: corp,
+            text: text,
+            cash: cash,
+            currency: curr,
+            date_str: date
+        };
+    };
+
+    $scope.compareOpersByDate = function  (a, b) {
+        return -( Date.parse(a.date_str) - Date.parse(b.date_str) );
+    };
+
+    $scope.dateFormat = function ( date_str ) {
+        var cur_date = new Date(Date.parse(date_str));
+
+        var month = "";
+        switch (cur_date.getMonth()) {
+            case 0: month = "января"; break;
+            case 1: month = "февраля"; break;
+            case 2: month = "марта"; break;
+            case 3: month = "апреля"; break;
+            case 4: month = "мая"; break;
+            case 5: month = "июня"; break;
+            case 6: month = "июля"; break;
+            case 7: month = "августа"; break;
+            case 8: month = "сентября"; break;
+            case 9: month = "октября"; break;
+            case 10: month = "ноября"; break;
+            case 11: month = "декабря"; break;
+            default: console.log("Error: invalid month in date"); break;
+        }
+
+        return cur_date.getDate().toString() + " " + month;
+    };
+
+    $scope.transactions = [
+        $scope.createTrans("ООО Сбербанк", "Проценты по кредиту", "-450", "$", "2016-02-05T10:02:23"),
+        $scope.createTrans("ООО Prisma Atlantic", "Стандартное назначение платежа абонентское обслуживание ООО Открытые бизнес-системы договор номер 134234235", "300", "$", "2016-09-04T12:23:11"),
+        $scope.createTrans("ООО МММ", "Проценты от Серого", "120", "$", "2016-08-03T17:29:54"),
+        $scope.createTrans("ООО Газпром", "Доход по акциям", "241", "$", "2016-11-01T09:01:00"),
+        $scope.createTrans("ООО Теньков", "Взятка", "100", "$", "2016-04-29T21:56:01"),
+        $scope.createTrans("ИП Имаметдинов Димас", "Плата за саппорт", "200", "$", "2016-05-06T14:12:32"),
+        $scope.createTrans("ЖКХ", "Счёт за воду", "-350", "$", "2016-05-05T14:12:32"),
+        $scope.createTrans("ЖКХ", "Счёт за свет", "-150", "$", "2016-05-07T14:12:32"),
+        $scope.createTrans("ИП Люся", "Плата за тортик", "-50", "$", "2016-05-09T14:12:32"),
+        $scope.createTrans("Starbucks", "Кофе", "-199", "р", "2016-05-07T14:12:32"),
+        $scope.createTrans("KFC", "Острые куриные крылышки, 8 шт.", "-399", "р", "2016-05-08T14:12:32")
+    ].sort($scope.compareOpersByDate);
+    $scope.transactionsDollar = $scope.transactions.filter(function(x){return x.currency==="$"});
+    $scope.transactionsRouble = $scope.transactions.filter(function(x){return x.currency==="р"});
+    $scope.cash = [1000, 1000];
+    $scope.called = [0, 0, 0, 0];
+    $scope.graphHeight = 300;
+
+    $scope.returnCurIndex = function (curr_str) {
+        switch (curr_str) {
+            case "rouble":
+                return 0;
+                break;
+            case "dollar":
+                return 1;
+                break;
+            default:
+                console.log("ERROR: Invalid curr_str!!!");
+                break;
+        }
+    };
+
+    $scope.returnx1 = function (index, curr, len) {
+        console.log("called returnx1");
+        return (index/len*100)+"%";
+    };
+
+    $scope.returnx2 = function (index, curr, len) {
+        console.log("called returnx2");
+        return ((index+1)/len*100)+"%";
+    };
+
+    $scope.returny1 = function (index, curr, len) {
+        console.log("called returny1");
+        return (1000-$scope.cash[$scope.returnCurIndex(curr)])*$scope.graphHeight/1000;
+    };
+
+    $scope.returny2 = function (index, curr, len, trans) {
+        console.log("called returny2");
+        return (1000-$scope.cash[$scope.returnCurIndex(curr)])*$scope.graphHeight/1000;
+    };
 
     $scope.show_profile = function () {
         $scope.black_menu_style = {display: "block", position: "fixed", height: "100%", zIndex: 1, width: "100%", overflow: "auto",
@@ -13,16 +105,16 @@ app.controller("myCtrl", function($scope) {
 
     $scope.hide_profile = function () {
         $scope.black_menu_style = {};
-    }
+    };
 
     $scope.show_menu = function () {
         $scope.white_menu_style = {display: "block", position: "fixed", height: "100%", zIndex: 1, width: "100%", overflow: "auto",
             left: "0", top: "0", background: "#FFFFFF"};
-    }
+    };
 
     $scope.hide_menu = function () {
         $scope.white_menu_style = {};
-    }
+    };
 
     $scope.hide_modal = function () {
         $scope.modal_style = {display: "none"};
@@ -37,19 +129,19 @@ app.controller("myCtrl", function($scope) {
         $scope.grey_style = {border: "3px solid black"};
         $scope.blue_style = {};
         $scope.purp_style = {};
-    }
+    };
 
     $scope.make_body_blue = function () {
         $scope.body_style = {background: '#0000FF'};
         $scope.grey_style = {};
         $scope.blue_style = {border: "3px solid black"};
         $scope.purp_style = {};
-    }
+    };
 
     $scope.make_body_violet = function () {
         $scope.body_style = {background: '#8B00FF'};
         $scope.grey_style = {};
         $scope.blue_style = {};
         $scope.purp_style = {border: "3px solid black"};
-    }
+    };
 });

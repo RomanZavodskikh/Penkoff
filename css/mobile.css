@@ -2,22 +2,6 @@
     body {
         font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    .sub_menu {
-        width: 80%;
-        margin: 1px auto;
-        font-size: 1.2em;
-        padding: 15px;
-        box-sizing: border-box;
-        float: none;
-        display: block;
-    }
-    .sub_menus {
-        margin: 0 auto;
-        display: none;
-    }
-    .sub_menus li {
-        display: inline;
-    }
     .profile_placeholder {
         display: none;
         top: auto;
@@ -73,17 +57,18 @@
         box-sizing: border-box;
     }
     .top_menu .sub_menus {
+        margin: 0px;
+        display: none;
         text-align: center;
         position: static;
-        margin-top: 0px;
         width: 100%;
         transform: none;
     }
+    .top_menu .sub_menus li {
+        display: inline;
+    }
     .top_menu #logo {
         display: none;
-        width: 100%;
-    }
-    .top_menu .sub_menus .sub_menu {
         width: 100%;
     }
     .top_menu .sub_menus #create_payment {
@@ -97,6 +82,16 @@
         margin-top: 2%;
         margin-left: 5%;
     }
+    .top_menu .sub_menus .sub_menu {
+        width: 100%;
+        margin: 1px auto;
+        font-size: 1.2em;
+        padding: 15px;
+        box-sizing: border-box;
+        float: none;
+        display: block;
+        margin: 0px;
+    }
     .main_part {
         width: 98%;
         margin-left: 1%;
@@ -107,7 +102,6 @@
     }
     .operation {
         margin: 0px;
-        border-width: 1px 0px 0px 0px;
     }
     .operation .date {
         padding-left: 5%;
@@ -128,7 +122,6 @@
     }
     .rouble_account, .dollar_account {
         width: 100%;
-        padding: 7px;
     }
     .accounts_border {
         width: 0px;
@@ -154,8 +147,5 @@
     }
     .mobile_menu_icon {
         height: 30px;
-    }
-    #op0 {
-        border-top: 0px;
     }
 }
