@@ -1,11 +1,13 @@
 <html>
     <head>
+        <title>Пенькофф</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
         <script src="js/angular.js"></script>
+        <script src="js/my_ng.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="myCtrl" ng-style="body_style">
     <div class="top_menu">
@@ -52,29 +54,33 @@
     </div>
     <div class="main_part">
         <div class="accounts">
-            <div class="rouble_account block">
-                    Рублёвый счёт <br> 0р
-                    <svg id="rouble_svg" height="300" width="100%">
+            <div class="rouble_account block" on-click="renderGraphs()">
+                    Рублёвый счёт <br> {{cash.rouble}}р
+                    <svg id="rouble_svg" height="{{graphHeight}}" width="100%" viewBox="0 0 {{viewPortScale}} {{viewPortScale}}" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color: rgb(255,255,255); stop-opacity:1" />
+                                <stop offset="100%" style="stop-color: rgb(0,0,255); stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
                         <g class="line_grouper">
-                            <line ng-repeat="trans in transactionsRouble | reverse"
-                                  class="line" x1="{{returnx1($index, 'rouble', transactionsRouble.length)}}"
-                                               x2="{{returnx2($index, 'rouble', transactionsRouble.length)}}"
-                                               y1="{{returny1($index, 'rouble', transactionsRouble.length)}}"
-                                               y2="{{returny2($index, 'rouble', transactionsRouble.length, trans)}}" />
+                            <polyline class="line" points="{{pointsRouble}}" fill="url(#grad1)"/>
+                        </g>
+                        <g class="grid">
+                            <line class="grid_line" ng-repeat="i in [0,1,2,3,4,5,6,7,8,9]" x1="0" x2="{{viewPortScale}}" y1="{{i*viewPortScale/10}}" y2="{{i*viewPortScale/10}}">
                         </g>
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
             <div class="dollar_account block">
-                    Долларовый счёт <br> 0$
-                    <svg id="dollar_svg" height="300" width="100%">
-                        <!-- <g class="line_grouper">
-                            <line ng-repeat="trans in transactionsDollar | reverse"
-                                  class="line" x1="{{returnx1($index, 'dollar', transactionsDollar.length)}}"
-                                               x2="{{returnx2($index, 'dollar', transactionsDollar.length)}}"
-                                               y1="{{returny1($index, 'dollar', transactionsDollar.length)}}"
-                                               y2="{{returny2($index, 'dollar', transactionsDollar.length, trans)}}" />
-                        </g> -->
+                    Долларовый счёт <br> {{cash.dollar}}$
+                    <svg id="dollar_svg" height="{{graphHeight}}" width="100%" viewBox="0 0 {{viewPortScale}} {{viewPortScale}}" preserveAspectRatio="none">
+                        <g class="line_grouper">
+                            <polyline class="line" points="{{pointsDollar}}" />
+                        </g>
+                        <g class="grid">
+                            <line class="grid_line" ng-repeat="i in [0,1,2,3,4,5,6,7,8,9]" x1="0" x2="{{viewPortScale}}" y1="{{i*viewPortScale/10}}" y2="{{i*viewPortScale/10}}">
+                        </g>
                         Простите, но SVG у вас не поддерживается, графичков тут не будет!!!
                     </svg>
             </div>
@@ -114,6 +120,5 @@
             Ссылка, на которую вы нажали, является всего лишь элементом декорации.
         </div>
     </div>
-    <script src="js/my_ng.js"></script>
     </body>
 </html>

@@ -60,42 +60,26 @@ app.controller("myCtrl", function($scope) {
     ].sort($scope.compareOpersByDate);
     $scope.transactionsDollar = $scope.transactions.filter(function(x){return x.currency==="$"});
     $scope.transactionsRouble = $scope.transactions.filter(function(x){return x.currency==="р"});
-    $scope.cash = [1000, 1000];
-    $scope.called = [0, 0, 0, 0];
+    $scope.cash = {rouble: 1000, dollar: 1000}
     $scope.graphHeight = 300;
+    $scope.viewPortScale = 1000;
+    $scope.pointsRouble = "";
+    $scope.pointsDollar = "";
 
-    $scope.returnCurIndex = function (curr_str) {
-        switch (curr_str) {
-            case "rouble":
-                return 0;
-                break;
-            case "dollar":
-                return 1;
-                break;
-            default:
-                console.log("ERROR: Invalid curr_str!!!");
-                break;
+    $scope.renderGraphs = function () {
+        $scope.pointsRouble += "0, 0,";
+        for (var i = $scope.transactionsRouble.length-1; i >= 0; i--) {
+            $scope.pointsRouble += ($scope.transactionsRouble.length-i)*1000/$scope.transactionsRouble.length + ',';
+            $scope.cash.rouble += parseInt($scope.transactionsRouble[i].cash);
+            $scope.pointsRouble += (1000-$scope.cash.rouble)*1000/$scope.viewPortScale + ',';
         }
-    };
 
-    $scope.returnx1 = function (index, curr, len) {
-        console.log("called returnx1");
-        return (index/len*100)+"%";
-    };
-
-    $scope.returnx2 = function (index, curr, len) {
-        console.log("called returnx2");
-        return ((index+1)/len*100)+"%";
-    };
-
-    $scope.returny1 = function (index, curr, len) {
-        console.log("called returny1");
-        return (1000-$scope.cash[$scope.returnCurIndex(curr)])*$scope.graphHeight/1000;
-    };
-
-    $scope.returny2 = function (index, curr, len, trans) {
-        console.log("called returny2");
-        return (1000-$scope.cash[$scope.returnCurIndex(curr)])*$scope.graphHeight/1000;
+        $scope.pointsDollar += "0, 0,";
+        for (var i = $scope.transactionsDollar.length-1; i >= 0; i--) {
+            $scope.pointsDollar += ($scope.transactionsDollar.length-i)*1000/$scope.transactionsDollar.length + ',';
+            $scope.cash.dollar += parseInt($scope.transactionsDollar[i].cash);
+            $scope.pointsDollar += (1000-$scope.cash.dollar)*1000/$scope.viewPortScale + ',';
+        }
     };
 
     $scope.show_profile = function () {
@@ -144,4 +128,6 @@ app.controller("myCtrl", function($scope) {
         $scope.blue_style = {};
         $scope.purp_style = {border: "3px solid black"};
     };
+
+    $scope.renderGraphs();
 });

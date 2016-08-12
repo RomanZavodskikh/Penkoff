@@ -15,8 +15,16 @@ body {
     box-sizing: border-box;
 }
 .line {
+    fill: none;
     stroke: rgb(255, 0, 0);
+    stroke-width: 4;
+}
+.grid_line {
+    stroke: rgb(180, 180, 180);
     stroke-width: 1;
+}
+#rouble_svg, #dollar_svg {
+    background: rgb(250, 250, 250);
 }
 #debug_info {
     display: none;
