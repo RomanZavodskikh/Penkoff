@@ -103,10 +103,11 @@ body {
     background-color: #8b00ff;
 }
 .profile_placeholder #ads {
+    color: #210909;
     padding: 5px;
     text-align: center;
-    background: #6195bf;
-    background: linear-gradient(to top, #42aaff, #808080);
+    background: url("../img/ad.jpg");
+    background-size: cover;
     margin-top: 5px;
 }
 .main_part {

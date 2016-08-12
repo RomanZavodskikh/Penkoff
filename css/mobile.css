@@ -16,6 +16,7 @@
     .profile_placeholder .profile .organization {
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
     }
     .profile_placeholder .profile .name {
         text-align: center;
