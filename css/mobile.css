@@ -149,4 +149,8 @@
     .mobile_menu_icon {
         height: 30px;
     }
+    .mobile_info {
+        background: black;
+        color: white;
+    }
 }

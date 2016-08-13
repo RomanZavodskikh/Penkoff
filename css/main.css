@@ -138,11 +138,11 @@ body {
 .operation {
     width: 100%;
     display: inline-block;
-    border: #C7C8CA solid;
-    border-width: 0px 0px 1px 0px;
     margin: 1px 0px 1px 0px;
     padding: 7px 0px;
     position: relative;
+    border: #C7C8CA solid;
+    border-width: 0px 0px 1px 0px;
 }
 .operation:hover {
     background-color: lightyellow;
@@ -169,6 +169,9 @@ body {
     right: 4%;
     top: 50%;
     transform: translateY(-50%);
+}
+.mobile_info {
+    display: none;
 }
 .delimeter {
     width: 100%;

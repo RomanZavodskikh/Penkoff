@@ -6,6 +6,31 @@ app.filter('reverse', function() {
     };
 });
 app.controller("myCtrl", function($scope) {
+    $scope.toggleMobileInfo = function (event) {
+        if ( document.body.clientWidth > 650) {
+            //We're not in mobile device, go away from here!!!
+            return;
+        }
+
+        if (   event.target.classList[0] === "date"
+            || event.target.classList[0] === "cash") {
+            if ( event.target.parentElement/*.operation*/.parentElement.childNodes[7].style.display == "" ) {
+                //We need to hide all the rest first
+                for (var child_ind in event.target.parentElement.parentElement.parentElement.childNodes) {
+                    var grandGrandFathersChildren = event.target.parentElement.parentElement.parentElement.childNodes;
+                    console.log(child_ind);
+                    if (isFinite(child_ind) && grandGrandFathersChildren[child_ind].childNodes[7] && grandGrandFathersChildren[child_ind].childNodes[7].style.display == "block") {
+                        grandGrandFathersChildren[child_ind].childNodes[7].style.display = "";
+                    }
+                }
+
+                event.target.parentElement/*.operation*/.parentElement.childNodes[7].style.display = "block";
+            } else {
+                event.target.parentElement/*.operation*/.parentElement.childNodes[7].style.display = "";
+            }
+        }
+    };
+
     $scope.grey_style = {border: "3px black solid"};
 
     $scope.createTrans = function  (corp, text, cash, curr, date) {

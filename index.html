@@ -3,6 +3,7 @@
         <title>Пенькофф</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
@@ -97,17 +98,21 @@
         </div>
         <div class="transaction block">
             <div ng-repeat="trans in transactions">
-                <div class="operation" ng-if="!$last">
+                <div class="operation" ng-if="!$last" ng-click="toggleMobileInfo($event)">
                     <div class="date">{{dateFormat(trans.date_str)}}</div>
                     <div class="company">{{trans.company}}</div>
                     <div class="text">{{trans.text}}</div>
                     <div class="cash">{{trans.cash+trans.currency}}</div>
                 </div>
-                <div class="operation" ng-if="$last" style="border-bottom: 0px">
+                <div class="operation" ng-if="$last" ng-click="toggleMobileInfo($event)" style="border-bottom: 0px">
                     <div class="date">{{dateFormat(trans.date_str)}}</div>
                     <div class="company">{{trans.company}}</div>
                     <div class="text">{{trans.text}}</div>
                     <div class="cash">{{trans.cash+trans.currency}}</div>
+                </div>
+                <div class="mobile_info">
+                    <div class="company_mobile">{{trans.company}}</div>
+                    <div class="text_mobile">{{trans.text}}</div>
                 </div>
             </div>
         </div>
