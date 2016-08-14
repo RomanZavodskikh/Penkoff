@@ -150,7 +150,8 @@
         height: 30px;
     }
     .mobile_info {
-        background: black;
+        transition-property: display 2s;
+        background: #ada2a2;
         color: white;
     }
 }

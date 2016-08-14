@@ -21,7 +21,7 @@
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Лимиты</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Тариф</a></li>
             <li><a class="sub_menu" href="#" ng-click="show_modal()">Справка</a></li>
-            <li><a id="create_payment" class="sub_menu" href="#">Создать платёж</a></li>
+            <li><a id="create_payment" class="sub_menu" href="#" ng-click="show_modal_new_op()"> Создать платёж</a></li>
         </ul>
         <div class="just_mobile">
             <img class="mobile_menu_icon" id="menu_mob" src="img/menu.svg" alt="" ng-click="show_menu()">
@@ -41,7 +41,7 @@
                 <li><a href="#" id="acquiring" class="right_menu" ng-click="show_modal()">Эквайринг</a></li>
                 <li><a href="#" id="buy_by_credit" class="right_menu" ng-click="show_modal()">КВК</a></li>
                 <li><a href="#" id="accounting" class="right_menu" ng-click="show_modal()">Бухгалтерия</a></li>
-                    <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
+                <li><a href="#" id="settings" class="right_menu" ng-click="show_modal()">Панель управления</a></li>
             </ul>
             <div id="ads">
                 <h4 class="ad_header">Не экономьте на платежах.</h4> Совершайте неограниченное число платежей за 990 рублей в месяц
@@ -123,6 +123,29 @@
     <div class="modal" ng-click="hide_modal()" ng-style="modal_style">
         <div class="modal_content">
             Ссылка, на которую вы нажали, является всего лишь элементом декорации.
+        </div>
+    </div>
+    <div class="modal" ng-style="modal_new_op_style">
+        <div class="modal_content">
+            <select id="client_select" ng-click="toggleCorpSelectStyle($event)">
+                <option disabled selected>Выберите получателя/отправителя</option>
+                <option ng-repeat="client in clients" value="{{client}}">{{client}}</option>
+                <option>Другой</option>
+            </select>
+            <input placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
+            <input type="number" placeholder="Cумма" id="cash_select"></input>
+            <select id="curr_select">
+                <option value="р">р</option>
+                <option value="$">$</option>
+            </select>
+            <input placeholder="Причина" id="text_select"></input>
+            <input type="button" ng-click="create_payment()" value="Создать платёж"></input>
+            <input type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
+            <div id="error_nothing_selected" ng-style="error_nothing_selected_style">Выбери ну чего-нибудь из клиентов...</div>
+            <div id="empty_client_selected" ng-style="empty_client_selected_style">Хей, у тебя выбран пустой клиент</div>
+            <div id="empty_text_selected" ng-style="empty_text_selected_style">Хой, у тебя пустая причина платежа</div>
+            <div id="empty_sum" ng-style="empty_sum_style">Эй, у тебя нет суммы</div>
+            <div id="no_curr" ng-style="no_curr_style">Ну блин, ну ты же валюту не выбрал</div>
         </div>
     </div>
     </body>

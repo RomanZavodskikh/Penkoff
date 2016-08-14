@@ -221,3 +221,8 @@ body {
 #op0 {
     border-top: 0px;
 }
+#error_nothing_selected, #empty_client_selected, #empty_text_selected, #empty_sum,
+#no_curr {
+    display: none;
+    color: red;
+}

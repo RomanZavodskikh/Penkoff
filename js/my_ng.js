@@ -6,6 +6,73 @@ app.filter('reverse', function() {
     };
 });
 app.controller("myCtrl", function($scope) {
+    var removeDuplicate = function (arr) {
+        var result = [];
+        var sort_arr = arr.sort();
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i+1] !== arr[i]) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    };
+
+    $scope.create_payment = function () {
+        //The 0'th option is "Select Something" and cannot be selected
+        $scope.error_nothing_selected_style = $scope.empty_client_selected_style =
+            $scope.empty_text_selected_style = $scope.empty_sum_style =
+            $scope.no_curr_style = {};
+        for (var i = 1; i < document.getElementById("client_select").childElementCount; i++) {
+            if (document.getElementById("client_select")[i].selected) {
+                var now = new Date();
+                var corporation = document.getElementById("client_select")[i].value;
+                if (corporation === "Другой") {
+                    corporation = document.getElementById("corp_select").value;
+                    var clients = $scope.clients;
+                    clients.push(corporation);
+                    $scope.clients = removeDuplicate(clients);
+                }
+                if (corporation === "") {
+                    $scope.empty_client_selected_style = {display: "block"};
+                    return;
+                }
+
+                var text = document.getElementById("text_select").value;
+                if (text === "") {
+                    $scope.empty_text_selected_style = {display: "block"};
+                    return;
+                }
+
+                var cash = document.getElementById("cash_select").valueAsNumber;
+                if (isNaN(cash)) {
+                    $scope.empty_sum_style = {display: "block"};
+                    return;
+                }
+
+                var curr = document.getElementById("curr_select").selectedOptions[0].value;
+                if (curr === "") {
+                    $scope.no_curr_style = {display: "block"};
+                    return;
+                }
+
+                $scope.transactions.push($scope.createTrans(
+                    corporation,
+                    text,
+                    cash,
+                    curr,
+                    now.toISOString()
+                ));
+
+                $scope.transactions.sort($scope.compareOpersByDate);
+                $scope.renderGraphs();
+                $scope.hide_modal_new_op();
+
+                return; //We've done all that needed
+            }
+        }
+        $scope.error_nothing_selected_style = {display: "block"};
+    };
+
     $scope.toggleMobileInfo = function (event) {
         if ( document.body.clientWidth > 650) {
             //We're not in mobile device, go away from here!!!
@@ -32,6 +99,7 @@ app.controller("myCtrl", function($scope) {
     };
 
     $scope.grey_style = {border: "3px black solid"};
+    $scope.corp_select_style = {display: "none"};
 
     $scope.createTrans = function  (corp, text, cash, curr, date) {
         return {
@@ -71,35 +139,39 @@ app.controller("myCtrl", function($scope) {
     };
 
     $scope.transactions = [
-        $scope.createTrans("ООО Сбербанк", "Проценты по кредиту", "-450", "$", "2016-02-05T10:02:23"),
-        $scope.createTrans("ООО Prisma Atlantic", "Стандартное назначение платежа абонентское обслуживание ООО Открытые бизнес-системы договор номер 134234235", "300", "$", "2016-09-04T12:23:11"),
-        $scope.createTrans("ООО МММ", "Проценты от Серого", "120", "$", "2016-08-03T17:29:54"),
-        $scope.createTrans("ООО Газпром", "Доход по акциям", "241", "$", "2016-11-01T09:01:00"),
-        $scope.createTrans("ООО Теньков", "Взятка", "100", "$", "2016-04-29T21:56:01"),
-        $scope.createTrans("ИП Имаметдинов Димас", "Плата за саппорт", "200", "$", "2016-05-06T14:12:32"),
-        $scope.createTrans("ЖКХ", "Счёт за воду", "-350", "$", "2016-05-05T14:12:32"),
-        $scope.createTrans("ЖКХ", "Счёт за свет", "-150", "$", "2016-05-07T14:12:32"),
-        $scope.createTrans("ИП Люся", "Плата за тортик", "-50", "$", "2016-05-09T14:12:32"),
-        $scope.createTrans("Starbucks", "Кофе", "-199", "р", "2016-05-07T14:12:32"),
-        $scope.createTrans("KFC", "Острые куриные крылышки, 8 шт.", "-399", "р", "2016-05-08T14:12:32")
+        $scope.createTrans("ООО Сбербанк", "Проценты по кредиту", "-450", "$", "2015-02-05T10:02:23"),
+        $scope.createTrans("ООО Prisma Atlantic", "Стандартное назначение платежа абонентское обслуживание ООО Открытые бизнес-системы договор номер 134234235", "300", "$", "2015-09-04T12:23:11"),
+        $scope.createTrans("ООО МММ", "Проценты от Серого", "120", "$", "2015-08-03T17:29:54"),
+        $scope.createTrans("ООО Газпром", "Доход по акциям", "241", "$", "2015-11-01T09:01:00"),
+        $scope.createTrans("ООО Теньков", "Взятка", "100", "$", "2015-04-29T21:56:01"),
+        $scope.createTrans("ИП Имаметдинов Димас", "Плата за саппорт", "200", "$", "2015-05-06T14:12:32"),
+        $scope.createTrans("ЖКХ", "Счёт за воду", "-350", "$", "2015-05-05T14:12:32"),
+        $scope.createTrans("ЖКХ", "Счёт за свет", "-150", "$", "2015-05-07T14:12:32"),
+        $scope.createTrans("ИП Люся", "Плата за тортик", "-50", "$", "2015-05-09T14:12:32"),
+        $scope.createTrans("Starbucks", "Кофе", "-199", "р", "2015-05-07T14:12:32"),
+        $scope.createTrans("KFC", "Острые куриные крылышки, 8 шт.", "-399", "р", "2015-05-08T14:12:32")
     ].sort($scope.compareOpersByDate);
-    $scope.transactionsDollar = $scope.transactions.filter(function(x){return x.currency==="$"});
-    $scope.transactionsRouble = $scope.transactions.filter(function(x){return x.currency==="р"});
-    $scope.cash = {rouble: 1000, dollar: 1000}
+
+    var clients = $scope.transactions.map(function(elem) {
+        return elem.company;
+    });
+    $scope.clients = removeDuplicate(clients);
+
     $scope.graphHeight = 300;
     $scope.viewPortScale = 1000;
-    $scope.pointsRouble = "";
-    $scope.pointsDollar = "";
 
     $scope.renderGraphs = function () {
-        $scope.pointsRouble += "0, 0,";
+        $scope.transactionsDollar = $scope.transactions.filter(function(x){return x.currency==="$"});
+        $scope.transactionsRouble = $scope.transactions.filter(function(x){return x.currency==="р"});
+        $scope.cash = {rouble: 1000, dollar: 1000}
+        $scope.pointsRouble = "0, 0,";
         for (var i = $scope.transactionsRouble.length-1; i >= 0; i--) {
             $scope.pointsRouble += ($scope.transactionsRouble.length-i)*1000/$scope.transactionsRouble.length + ',';
             $scope.cash.rouble += parseInt($scope.transactionsRouble[i].cash);
             $scope.pointsRouble += (1000-$scope.cash.rouble)*1000/$scope.viewPortScale + ',';
         }
 
-        $scope.pointsDollar += "0, 0,";
+        $scope.pointsDollar = "0, 0,";
         for (var i = $scope.transactionsDollar.length-1; i >= 0; i--) {
             $scope.pointsDollar += ($scope.transactionsDollar.length-i)*1000/$scope.transactionsDollar.length + ',';
             $scope.cash.dollar += parseInt($scope.transactionsDollar[i].cash);
@@ -133,6 +205,14 @@ app.controller("myCtrl", function($scope) {
         $scope.modal_style = {display: "block"};
     };
 
+    $scope.show_modal_new_op = function () {
+        $scope.modal_new_op_style = {display: "block"};
+    };
+
+    $scope.hide_modal_new_op = function () {
+        $scope.modal_new_op_style = {display: "none"};
+    };
+
     $scope.make_body_grey = function () {
         $scope.body_style = {background: '#F6F7F9'};
         $scope.grey_style = {border: "3px solid black"};
@@ -152,6 +232,15 @@ app.controller("myCtrl", function($scope) {
         $scope.grey_style = {};
         $scope.blue_style = {};
         $scope.purp_style = {border: "3px solid black"};
+    };
+
+    $scope.toggleCorpSelectStyle = function (event) {
+        console.log(event.target);
+        if (event.target.value && event.target.value === "Другой") {
+            $scope.corp_select_style = {display: "inline"};
+        } else {
+            $scope.corp_select_style = {display: "none"};
+        }
     };
 
     $scope.renderGraphs();
