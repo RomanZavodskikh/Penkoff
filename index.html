@@ -134,14 +134,14 @@
                     <option ng-repeat="client in clients" value="{{client}}">{{client}}</option>
                     <option>Другой</option>
                 </select>
-                <input placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
-                <input type="number" placeholder="Cумма" ng-model="selectedCash"></input>
+                <input class="modal_text_form" placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
+                <input class="modal_text_form" type="number" placeholder="Cумма" ng-model="selectedCash"></input>
                 <select id="curr_select" ng-model="selectedCurr">
                     <option value="р">р</option>
                     <option value="$">$</option>
                 </select>
             </div>
-            <input class="modal_new_op_row" placeholder="Причина" ng-model="selectedText"></input>
+            <input class="modal_new_op_row modal_text_form" placeholder="Причина" ng-model="selectedText"></input>
             <div class="modal_new_op_row">
                 <input class="btn btn-default" type="button" ng-click="create_payment()" value="Создать платёж"></input>
                 <input class="btn btn-default" type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>

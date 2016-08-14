@@ -154,4 +154,13 @@
         background: #ada2a2;
         color: white;
     }
+    .modal_content select {
+        height: 2.5em;
+    }
+    .modal_content .modal_text_form {
+        height: 2.5em;
+    }
+    .modal_content #corp_select {
+        width: 100%;
+    }
 }
