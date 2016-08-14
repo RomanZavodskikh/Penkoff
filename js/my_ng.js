@@ -21,7 +21,7 @@ app.controller("myCtrl", function($scope) {
         //The 0'th option is "Select Something" and cannot be selected
         $scope.error_nothing_selected_style = $scope.empty_client_selected_style =
             $scope.empty_text_selected_style = $scope.empty_sum_style =
-            $scope.no_curr_style = {};
+            $scope.no_curr_style = $scope.overdraft_style = {};
         for (var i = 1; i < document.getElementById("client_select").childElementCount; i++) {
             if (document.getElementById("client_select")[i].selected) {
                 var now = new Date();
@@ -44,7 +44,7 @@ app.controller("myCtrl", function($scope) {
                 }
 
                 var cash = $scope.selectedCash;
-                if (isNaN(cash)) {
+                if (isNaN(cash) || cash === null) {
                     $scope.empty_sum_style = {display: "block"};
                     return;
                 }
@@ -52,6 +52,12 @@ app.controller("myCtrl", function($scope) {
                 var curr =  $scope.selectedCurr;
                 if (curr === undefined) {
                     $scope.no_curr_style = {display: "block"};
+                    return;
+                }
+
+                if (   curr === "$" && $scope.cash.dollar + cash < 0
+                    || curr === "р" && $scope.cash.rouble + cash < 0) {
+                    $scope.overdraft_style = {display: "block"};
                     return;
                 }
 
@@ -157,25 +163,53 @@ app.controller("myCtrl", function($scope) {
     });
     $scope.clients = removeDuplicate(clients);
 
+    $scope.initial_cash = {rouble: 1000, dollar: 1000};
+
+    $scope.cash = {};
+    $scope.cash.rouble = $scope.initial_cash.rouble;
+    $scope.cash.dollar = $scope.initial_cash.dollar;
+
     $scope.graphHeight = 300;
     $scope.viewPortScale = 1000;
 
     $scope.renderGraphs = function () {
         $scope.transactionsDollar = $scope.transactions.filter(function(x){return x.currency==="$"});
         $scope.transactionsRouble = $scope.transactions.filter(function(x){return x.currency==="р"});
-        $scope.cash = {rouble: 1000, dollar: 1000}
-        $scope.pointsRouble = "0, 0,";
+
+        $scope.cash.rouble = $scope.initial_cash.rouble;
+        $scope.cash.dollar = $scope.initial_cash.dollar;
+
+        var max = {rouble: $scope.cash.rouble, dollar: $scope.cash.dollar};
+
         for (var i = $scope.transactionsRouble.length-1; i >= 0; i--) {
-            $scope.pointsRouble += ($scope.transactionsRouble.length-i)*1000/$scope.transactionsRouble.length + ',';
             $scope.cash.rouble += parseInt($scope.transactionsRouble[i].cash);
-            $scope.pointsRouble += (1000-$scope.cash.rouble)*1000/$scope.viewPortScale + ',';
+            if ($scope.cash.rouble > max.rouble) {
+                max.rouble = $scope.cash.rouble;
+            }
         }
 
-        $scope.pointsDollar = "0, 0,";
         for (var i = $scope.transactionsDollar.length-1; i >= 0; i--) {
-            $scope.pointsDollar += ($scope.transactionsDollar.length-i)*1000/$scope.transactionsDollar.length + ',';
             $scope.cash.dollar += parseInt($scope.transactionsDollar[i].cash);
-            $scope.pointsDollar += (1000-$scope.cash.dollar)*1000/$scope.viewPortScale + ',';
+            if ($scope.cash.dollar > max.dollar) {
+                max.dollar = $scope.cash.dollar;
+            }
+        }
+
+        $scope.cash.rouble = $scope.initial_cash.rouble;
+        $scope.cash.dollar = $scope.initial_cash.dollar;
+
+        $scope.pointsRouble = "0, " + ((max.rouble-$scope.cash.rouble)/max.rouble)*$scope.viewPortScale + ',';
+        for (var i = $scope.transactionsRouble.length-1; i >= 0; i--) {
+            $scope.pointsRouble += ($scope.transactionsRouble.length-i)*$scope.viewPortScale/$scope.transactionsRouble.length + ',';
+            $scope.cash.rouble += parseInt($scope.transactionsRouble[i].cash);
+            $scope.pointsRouble += ((max.rouble-$scope.cash.rouble)/max.rouble)*$scope.viewPortScale + ',';
+        }
+
+        $scope.pointsDollar = "0, " + ((max.dollar-$scope.cash.dollar)/max.dollar)*$scope.viewPortScale + ',';
+        for (var i = $scope.transactionsDollar.length-1; i >= 0; i--) {
+            $scope.pointsDollar += ($scope.transactionsDollar.length-i)*$scope.viewPortScale/$scope.transactionsDollar.length + ',';
+            $scope.cash.dollar += parseInt($scope.transactionsDollar[i].cash);
+            $scope.pointsDollar += ((max.dollar-$scope.cash.dollar)/max.dollar)*$scope.viewPortScale + ',';
         }
     };
 
