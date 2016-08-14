@@ -18,3 +18,8 @@
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
+
+.modal_new_op_row {
+    width: 100%;
+    margin: 5px 0px;
+}

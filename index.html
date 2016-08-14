@@ -127,25 +127,31 @@
     </div>
     <div class="modal" ng-style="modal_new_op_style">
         <div class="modal_content">
-            <select id="client_select" ng-model="selectedClient" ng-change="toggleCorpSelectStyle()">
-                <option disabled selected>Выберите получателя/отправителя</option>
-                <option ng-repeat="client in clients" value="{{client}}">{{client}}</option>
-                <option>Другой</option>
-            </select>
-            <input placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
-            <input type="number" placeholder="Cумма" ng-model="selectedCash"></input>
-            <select id="curr_select" ng-model="selectedCurr">
-                <option value="р">р</option>
-                <option value="$">$</option>
-            </select>
-            <input placeholder="Причина" ng-model="selectedText"></input>
-            <input type="button" ng-click="create_payment()" value="Создать платёж"></input>
-            <input type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
-            <div id="error_nothing_selected" ng-style="error_nothing_selected_style">Выбери ну чего-нибудь из клиентов...</div>
-            <div id="empty_client_selected" ng-style="empty_client_selected_style">Хей, у тебя выбран пустой клиент</div>
-            <div id="empty_text_selected" ng-style="empty_text_selected_style">Хой, у тебя пустая причина платежа</div>
-            <div id="empty_sum" ng-style="empty_sum_style">Эй, у тебя нет суммы</div>
-            <div id="no_curr" ng-style="no_curr_style">Ну блин, ну ты же валюту не выбрал</div>
+            <div class="modal_new_op_row">
+                <select id="client_select" ng-model="selectedClient" ng-change="toggleCorpSelectStyle()">
+                    <option disabled selected>Выберите получателя/отправителя</option>
+                    <option ng-repeat="client in clients" value="{{client}}">{{client}}</option>
+                    <option>Другой</option>
+                </select>
+                <input placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
+                <input type="number" placeholder="Cумма" ng-model="selectedCash"></input>
+                <select id="curr_select" ng-model="selectedCurr">
+                    <option value="р">р</option>
+                    <option value="$">$</option>
+                </select>
+            </div>
+            <input class="modal_new_op_row" placeholder="Причина" ng-model="selectedText"></input>
+            <div class="modal_new_op_row">
+                <input type="button" ng-click="create_payment()" value="Создать платёж"></input>
+                <input type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
+            </div>
+            <div class="modal_new_op_row">
+                <div id="error_nothing_selected" ng-style="error_nothing_selected_style">Выбери ну чего-нибудь из клиентов...</div>
+                <div id="empty_client_selected" ng-style="empty_client_selected_style">Хей, у тебя выбран пустой клиент</div>
+                <div id="empty_text_selected" ng-style="empty_text_selected_style">Хой, у тебя пустая причина платежа</div>
+                <div id="empty_sum" ng-style="empty_sum_style">Эй, у тебя нет суммы</div>
+                <div id="no_curr" ng-style="no_curr_style">Ну блин, ну ты же валюту не выбрал</div>
+            </div>
         </div>
     </div>
     </body>
