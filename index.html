@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/mobile.css">
+        <link rel="stylesheet" type="text/css" href="css/button.css">
         <script src="js/angular.js"></script>
         <script src="js/my_ng.js"></script>
     </head>
@@ -142,8 +143,8 @@
             </div>
             <input class="modal_new_op_row" placeholder="Причина" ng-model="selectedText"></input>
             <div class="modal_new_op_row">
-                <input type="button" ng-click="create_payment()" value="Создать платёж"></input>
-                <input type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
+                <input class="btn btn-default" type="button" ng-click="create_payment()" value="Создать платёж"></input>
+                <input class="btn btn-default" type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
             </div>
             <div class="modal_new_op_row">
                 <div id="error_nothing_selected" ng-style="error_nothing_selected_style">Выбери ну чего-нибудь из клиентов...</div>
