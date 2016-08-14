@@ -127,7 +127,7 @@
         </div>
     </div>
     <div class="modal" ng-style="modal_new_op_style">
-        <div class="modal_content">
+        <div class="modal_content" ng-keypress="create_payment_keypress($event)">
             <div class="modal_new_op_row">
                 <select id="client_select" ng-model="selectedClient" ng-change="toggleCorpSelectStyle()">
                     <option disabled selected>Выберите получателя/отправителя</option>

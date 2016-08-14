@@ -17,6 +17,12 @@ app.controller("myCtrl", function($scope) {
         return result;
     };
 
+    $scope.create_payment_keypress = function (event) {
+        if(event.which == 13) { //pressed Enter
+            $scope.create_payment();
+        }
+    };
+
     $scope.create_payment = function () {
         //The 0'th option is "Select Something" and cannot be selected
         $scope.error_nothing_selected_style = $scope.empty_client_selected_style =
