@@ -218,6 +218,9 @@ body {
 .menu_close {
     display: none;
 }
+#create_payment {
+    color: red;
+}
 #op0 {
     border-top: 0px;
 }

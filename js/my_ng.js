@@ -25,7 +25,7 @@ app.controller("myCtrl", function($scope) {
         for (var i = 1; i < document.getElementById("client_select").childElementCount; i++) {
             if (document.getElementById("client_select")[i].selected) {
                 var now = new Date();
-                var corporation = document.getElementById("client_select")[i].value;
+                var corporation = $scope.selectedClient;
                 if (corporation === "Другой") {
                     corporation = document.getElementById("corp_select").value;
                     var clients = $scope.clients;
@@ -37,20 +37,20 @@ app.controller("myCtrl", function($scope) {
                     return;
                 }
 
-                var text = document.getElementById("text_select").value;
-                if (text === "") {
+                var text = $scope.selectedText;
+                if (text === undefined) {
                     $scope.empty_text_selected_style = {display: "block"};
                     return;
                 }
 
-                var cash = document.getElementById("cash_select").valueAsNumber;
+                var cash = $scope.selectedCash;
                 if (isNaN(cash)) {
                     $scope.empty_sum_style = {display: "block"};
                     return;
                 }
 
-                var curr = document.getElementById("curr_select").selectedOptions[0].value;
-                if (curr === "") {
+                var curr =  $scope.selectedCurr;
+                if (curr === undefined) {
                     $scope.no_curr_style = {display: "block"};
                     return;
                 }
@@ -234,9 +234,8 @@ app.controller("myCtrl", function($scope) {
         $scope.purp_style = {border: "3px solid black"};
     };
 
-    $scope.toggleCorpSelectStyle = function (event) {
-        console.log(event.target);
-        if (event.target.value && event.target.value === "Другой") {
+    $scope.toggleCorpSelectStyle = function () {
+        if ($scope.selectedClient === "Другой") {
             $scope.corp_select_style = {display: "inline"};
         } else {
             $scope.corp_select_style = {display: "none"};

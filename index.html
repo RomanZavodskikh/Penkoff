@@ -127,18 +127,18 @@
     </div>
     <div class="modal" ng-style="modal_new_op_style">
         <div class="modal_content">
-            <select id="client_select" ng-click="toggleCorpSelectStyle($event)">
+            <select id="client_select" ng-model="selectedClient" ng-change="toggleCorpSelectStyle()">
                 <option disabled selected>Выберите получателя/отправителя</option>
                 <option ng-repeat="client in clients" value="{{client}}">{{client}}</option>
                 <option>Другой</option>
             </select>
             <input placeholder="Компания" id="corp_select" ng-style="corp_select_style"></input>
-            <input type="number" placeholder="Cумма" id="cash_select"></input>
-            <select id="curr_select">
+            <input type="number" placeholder="Cумма" ng-model="selectedCash"></input>
+            <select id="curr_select" ng-model="selectedCurr">
                 <option value="р">р</option>
                 <option value="$">$</option>
             </select>
-            <input placeholder="Причина" id="text_select"></input>
+            <input placeholder="Причина" ng-model="selectedText"></input>
             <input type="button" ng-click="create_payment()" value="Создать платёж"></input>
             <input type="button" ng-click="hide_modal_new_op()" value="Отмена"></input>
             <div id="error_nothing_selected" ng-style="error_nothing_selected_style">Выбери ну чего-нибудь из клиентов...</div>
