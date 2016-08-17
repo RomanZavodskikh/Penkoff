@@ -1,6 +1,6 @@
 @media screen and (max-width: 650px) {
     body {
-        font: 1.5em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 1.3em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .profile_placeholder {
         display: none;
