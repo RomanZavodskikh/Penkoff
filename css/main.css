@@ -67,10 +67,12 @@ body {
     bottom: 0%;
     right: 1%;
     background: #3E4758;
-    color: #FFFFFF;
     padding-top: 2%;
     position: fixed;
     width: 20%;
+}
+.profile_placeholder * {
+    color: white;
 }
 .profile_placeholder .profile {
     padding: 3px;
@@ -110,6 +112,9 @@ body {
     background: #BEFF79;
     background-size: cover;
     margin-top: 5px;
+}
+.profile_placeholder #ads * {
+    color: #210909;
 }
 .main_part {
     width: 70%;
