@@ -86,7 +86,7 @@ app.controller("myCtrl", function($scope) {
     };
 
     $scope.toggleMobileInfo = function (event) {
-        if ( document.body.clientWidth > 650) {
+        if ( document.body.clientWidth > 768) {
             //We're not in mobile device, go away from here!!!
             return;
         }
