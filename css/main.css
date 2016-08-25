@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    color: black;
 }
 body {
     background: #F6F7F9;
@@ -143,9 +144,6 @@ body {
     position: relative;
     border: #C7C8CA solid;
     border-width: 0px 0px 1px 0px;
-}
-.operation:hover {
-    background-color: lightyellow;
 }
 .operation .date {
     width: 12%;

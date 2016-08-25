@@ -151,8 +151,8 @@
     }
     .mobile_info {
         transition-property: display 2s;
-        background: #ada2a2;
-        color: white;
+        background: #92ffdc;
+        color: black;
     }
     .modal_content select {
         height: 2.5em;
