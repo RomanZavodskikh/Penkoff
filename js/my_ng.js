@@ -97,7 +97,6 @@ app.controller("myCtrl", function($scope) {
                 //We need to hide all the rest first
                 for (var child_ind in event.target.parentElement.parentElement.parentElement.childNodes) {
                     var grandGrandFathersChildren = event.target.parentElement.parentElement.parentElement.childNodes;
-                    console.log(child_ind);
                     if (isFinite(child_ind) && grandGrandFathersChildren[child_ind].childNodes[7] && grandGrandFathersChildren[child_ind].childNodes[7].style.display == "block") {
                         grandGrandFathersChildren[child_ind].childNodes[7].style.display = "";
                     }
